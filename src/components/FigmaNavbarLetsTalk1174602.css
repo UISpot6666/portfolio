@@ -1,0 +1,50 @@
+/* Figma 1174:602 — frame: row, center, h 40, radius 12, stroke 2px rgba(255,255,255,0.4), pad 10 8 10 12 */
+.figma-nav-lets-talk-602 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  padding: 10px 8px 10px 12px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 132%;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.figma-nav-lets-talk-602:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.figma-nav-lets-talk-602:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.figma-nav-lets-talk-602__label {
+  display: inline-block;
+}
+
+.figma-nav-lets-talk-602__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.figma-nav-lets-talk-602__svg {
+  display: block;
+}

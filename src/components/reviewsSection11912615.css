@@ -1,0 +1,244 @@
+/* Figma 1191:2615 — “4rd section” reviews */
+
+.reviews1191 {
+  width: 100%;
+  background: #ffffff;
+  padding: clamp(6rem, 12vw, 9.5rem) clamp(1.5rem, 5.83vw, 84px)
+    clamp(5rem, 10vw, 8rem);
+  box-sizing: border-box;
+}
+
+.reviews1191__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 1272px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.reviews1191__title {
+  margin: 0;
+  max-width: 672px;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.875rem, 4vw, 40px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #070e41;
+}
+
+/* Stage */
+.reviews1191__stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+.reviews1191__gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, #0e143f 0%, #0047ff 100%);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.reviews1191__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.reviews1191__edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(139px, 14vw);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.reviews1191__edge--left {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(51, 97, 214, 0.7) 0%,
+    rgba(51, 97, 214, 0) 100%
+  );
+}
+
+.reviews1191__edge--right {
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(51, 97, 214, 0.7) 0%,
+    rgba(51, 97, 214, 0) 100%
+  );
+}
+
+.reviews1191__viewport {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.reviews1191__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews1191__track {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  height: 100%;
+  padding: 108px calc(50% - 336px) 108px calc(50% - 336px);
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .reviews1191__track {
+    gap: clamp(28px, 6vw, 52px);
+    padding-inline: clamp(2rem, 12vw, 200px);
+  }
+}
+
+@media (max-width: 640px) {
+  .reviews1191__stage {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .reviews1191__track {
+    flex-direction: column;
+    align-items: center;
+    padding: 72px clamp(24px, 8vw, 48px);
+    height: auto;
+    scroll-snap-type: unset;
+    overflow: visible;
+  }
+
+  .reviews1191-card {
+    scroll-snap-align: unset !important;
+  }
+}
+
+.reviews1191-card {
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.reviews1191-card[data-size='sm'] {
+  width: clamp(280px, 78vw, 432px);
+  height: 264px;
+}
+
+.reviews1191-card[data-size='lg'] {
+  width: clamp(300px, 88vw, 672px);
+  height: 264px;
+}
+
+.reviews1191-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Controls */
+.reviews1191-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.reviews1191-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 2px solid rgba(7, 14, 65, 0.1);
+  background: transparent;
+  color: #070e41;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.reviews1191-nav:hover:not(:disabled) {
+  background: rgba(7, 14, 65, 0.04);
+}
+
+.reviews1191-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.reviews1191-nav__svg--next path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scaleX(-1);
+}
+
+.reviews1191-dots {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reviews1191-num {
+  appearance: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: none;
+  font-family: Archivo, sans-serif;
+  font-size: 18px;
+  line-height: 120%;
+  color: #000000;
+  opacity: 0.4;
+  font-weight: 400;
+  transition: opacity 0.15s ease;
+}
+
+.reviews1191-num:hover {
+  opacity: 0.65;
+}
+
+.reviews1191-num--current {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.reviews1191-num:not(.reviews1191-num--current) {
+  font-weight: 400;
+}

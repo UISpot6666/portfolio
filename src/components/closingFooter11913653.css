@@ -1,0 +1,450 @@
+/* Closing CTA + site footer — Figma 1191:3653 (“9 section”) */
+
+.cf1193653-contact {
+  position: relative;
+  scroll-margin-top: 6rem;
+  width: 100%;
+  height: 1000px;
+  background: #ffffff;
+  overflow: visible;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.cf1193653-contact__deck {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cf1193653-deco {
+  position: absolute;
+  height: auto;
+  display: block;
+  transform: translateZ(0);
+}
+
+/* Card — top-left (1193:4617) */
+.cf1193653-deco--tl {
+  left: max(12px, 1.2vw);
+  top: clamp(12px, 1.65vw, 22px);
+  width: clamp(180px, 33.85vw, 488px);
+  z-index: 2;
+}
+
+/* Small panel — upper right (1193:4618) */
+.cf1193653-deco--tr {
+  right: calc(7.56% - clamp(24px, 4vw, 40px));
+  top: clamp(6px, 0.72vw, 12px);
+  width: clamp(160px, 33.92vw, 489px);
+  z-index: 1;
+}
+
+/* Tall collage — mid right (1193:4619) */
+.cf1193653-deco--tall {
+  right: clamp(-24px, 1.5vw, 12px);
+  top: 24%;
+  width: clamp(200px, 45vw, 648px);
+  z-index: 0;
+}
+
+/* Tile — bottom left (1193:4620) */
+.cf1193653-deco--bl {
+  left: clamp(-56px, -2.8vw, -12px);
+  top: clamp(38%, 40.5vw, 42%);
+  width: clamp(180px, 34.41vw, 496px);
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .cf1193653-deco--tall {
+    opacity: 0.22;
+    right: -8%;
+    top: 30%;
+    width: 65vw;
+  }
+
+  .cf1193653-deco--tl,
+  .cf1193653-deco--tr,
+  .cf1193653-deco--bl {
+    opacity: 0.35;
+  }
+}
+
+.cf1193653-contact__inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: min(100%, 618px);
+  height: 100%;
+  margin-inline: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cf1193653-contact__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 618px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.cf1193653-contact__title {
+  margin: 0;
+  width: 100%;
+  min-width: 618px;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.875rem, 5vw, 52px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #070e41;
+}
+
+.cf1193653-contact__subtitle {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 30px;
+  max-width: 400px;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22.4px;
+  letter-spacing: -0.0089em;
+  color: #070e41;
+  opacity: 0.8;
+}
+
+.cf1193653-contact__cta-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: fit-content;
+  min-width: 618px;
+  max-width: 100%;
+}
+
+/* Primary — 1191:3977 */
+.cf1193653-primary {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  height: 52px;
+  padding: 10px 12px 10px 16px;
+  border-radius: 16px;
+  border: 3px solid rgba(255, 255, 255, 1);
+  background: linear-gradient(
+    158deg,
+    rgb(96, 140, 255) 0%,
+    rgb(12, 66, 206) 82%,
+    rgb(14, 20, 63) 100%
+  );
+  box-shadow:
+    0 8px 26.7px rgba(8, 37, 113, 0.2),
+    0 4px 8px rgba(12, 66, 206, 0.1),
+    inset 0 0 10px rgb(255, 255, 255);
+  text-decoration: none;
+  transition:
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.cf1193653-primary:hover {
+  filter: brightness(1.02);
+}
+
+.cf1193653-primary:focus-visible {
+  outline: 2px solid rgba(12, 66, 206, 0.55);
+  outline-offset: 3px;
+}
+
+.cf1193653-primary__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cf1193653-primary__label {
+  font-family: Archivo, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 132%;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.cf1193653-primary__icon-wrap {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+/* Secondary — 1191:3984 */
+.cf1193653-secondary {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  height: 52px;
+  padding: 10px 12px 10px 16px;
+  border-radius: 16px;
+  border: 3px solid rgba(7, 14, 65, 0.1);
+  background: transparent;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.cf1193653-secondary:hover {
+  background: rgba(7, 14, 65, 0.04);
+}
+
+.cf1193653-secondary:focus-visible {
+  outline: 2px solid rgba(7, 14, 65, 0.35);
+  outline-offset: 3px;
+}
+
+.cf1193653-secondary__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cf1193653-secondary__label {
+  font-family: Archivo, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 132%;
+  color: #070e41;
+}
+
+.cf1193653-secondary__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.cf1193653-secondary__cal-img {
+  display: block;
+  width: 18px;
+  height: auto;
+  max-height: 15px;
+  object-fit: contain;
+}
+
+/* Footer — Frame “Footer” 1191:4394 */
+.cf1193653-footer {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #f3f4f6;
+}
+
+.cf1193653-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 8vw, 100px);
+  padding: clamp(48px, 10vw, 80px) clamp(1.5rem, 8vw, 64px)
+    clamp(40px, 8vw, 68px);
+  box-sizing: border-box;
+}
+
+.cf1193653-footer__top {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 48px);
+  width: 100%;
+  text-align: left;
+}
+
+/* Figma 1110:15564 — 540px hero block */
+.cf1193653-footer__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 0 0 auto;
+  width: min(100%, 540px);
+}
+
+.cf1193653-footer__lead {
+  margin: 0;
+  width: 540px;
+  max-width: 100%;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 32px);
+  line-height: 104%;
+  letter-spacing: -0.32px;
+  color: #0a0a0a;
+}
+
+.cf1193653-footer__lead-alt {
+  margin: 0;
+  max-width: 392px;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 32px);
+  line-height: 104%;
+  letter-spacing: -0.32px;
+  color: #0a0a0a;
+}
+
+/* Figma 1110:15567 — flex-1 contact column */
+.cf1193653-footer__pitch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 1 0;
+  width: 100%;
+  min-width: min(180px, 100%);
+}
+
+.cf1193653-footer__muted {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22.4px;
+  letter-spacing: -0.16px;
+  color: #070e41;
+  opacity: 0.8;
+}
+
+.cf1193653-footer__mail {
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22.4px;
+  letter-spacing: -0.16px;
+  color: #070e41;
+  text-decoration: none;
+}
+
+.cf1193653-footer__mail:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Figma 1110:15570 — flex-1 learn + social column */
+.cf1193653-footer__learn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  flex: 1 1 0;
+  width: 100%;
+  min-width: min(260px, 100%);
+}
+
+.cf1193653-footer__learn-caption {
+  opacity: 0.8;
+}
+
+.cf1193653-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  opacity: 0.7;
+}
+
+.cf1193653-social__hit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  color: #070e41;
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.cf1193653-social__icon {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 22px;
+  max-height: 22px;
+  flex-shrink: 0;
+}
+
+.cf1193653-social__hit:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.cf1193653-social__hit:focus-visible {
+  outline: 2px solid rgba(7, 14, 65, 0.35);
+  outline-offset: 2px;
+}
+
+.cf1193653-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cf1193653-footer__meta {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: #070e41;
+}
+
+.cf1193653-footer__meta-muted {
+  font-weight: 500;
+  color: rgba(7, 14, 65, 0.4);
+}
+
+@media (max-width: 900px) {
+  .cf1193653-footer__hero,
+  .cf1193653-footer__pitch,
+  .cf1193653-footer__learn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .cf1193653-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,250 @@
+/* About / “Second section” — Figma 1174:2111 */
+
+.about2111 {
+  position: relative;
+  width: 100%;
+  min-height: 940px;
+  background: #ffffff;
+  padding: clamp(2rem, 5vw, 8.5rem) clamp(1.5rem, 8vw, 220px)
+    clamp(4rem, 10vw, 7.5rem);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .about2111 {
+    min-height: 0;
+  }
+}
+
+.about2111__logos {
+  width: min(100%, 1400px);
+  margin: 0 auto 170px;
+  opacity: 0.6;
+  box-sizing: border-box;
+  text-align: center;
+  align-content: center;
+  vertical-align: middle;
+}
+
+.about2111__logos-viewport {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+.about2111__logos-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  animation: about2111-ticker 55s linear infinite;
+  will-change: transform;
+}
+
+.about2111__logos-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes about2111-ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about2111__logos-viewport {
+    mask-image: none;
+  }
+
+  .about2111__logos-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    animation: none;
+  }
+}
+
+.about2111__logo-slot {
+  flex: 0 0 auto;
+  width: 179.42px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about2111__logo {
+  width: 100%;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+.about2111__inner {
+  max-width: 1000px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 10vw, 100px);
+}
+
+.about2111__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .about2111__intro {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+.about2111__badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+}
+
+.about2111__badge-prefix {
+  opacity: 0.4;
+}
+
+.about2111__headline {
+  margin: 0;
+  flex: 0 1 auto;
+  max-width: 680px;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  color: #070e41;
+}
+
+.about2111__headline-line {
+  display: block;
+}
+
+.about2111__headline-muted {
+  color: rgba(7, 14, 65, 0.4);
+}
+
+.about2111__headline-strong {
+  color: #070e41;
+  letter-spacing: -1px;
+  min-width: 650px;
+}
+
+@media (max-width: 640px) {
+  .about2111__headline {
+    font-size: clamp(1.875rem, 8vw, 2.5rem);
+    letter-spacing: -0.01em;
+  }
+}
+
+.about2111__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .about2111__stats {
+    flex-direction: row;
+    gap: clamp(2rem, 8vw, 100px);
+  }
+
+  .about2111__stats > .stat-item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.about2111 .stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about2111 .stat-item__value {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.75rem, 7vw, 72px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #070e41;
+}
+
+.about2111 .stat-item__value--align-center {
+  text-align: center;
+}
+
+.about2111 .stat-item__value--align-left {
+  text-align: left;
+}
+
+.about2111 .stat-item__value-suffix {
+  color: rgba(7, 14, 65, 0.2);
+}
+
+.about2111 .stat-item__divider {
+  flex-shrink: 0;
+  align-self: stretch;
+  margin: 0 !important;
+  border: none;
+  height: 1px;
+  background: rgba(7, 14, 65, 0.1);
+}
+
+.about2111 .stat-item__titles {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.about2111 .stat-item__title {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
+  color: #070e41;
+}
+
+.about2111 .stat-item__description {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  color: #070e41;
+  opacity: 0.6;
+}

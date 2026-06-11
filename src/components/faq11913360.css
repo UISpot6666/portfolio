@@ -1,0 +1,237 @@
+/* FAQs — Figma 1191:3360 (“8 section”) */
+
+.faq1191 {
+  width: 100%;
+  background: #ffffff;
+  padding: clamp(4.5rem, 10vw, 7rem) clamp(1.5rem, 8vw, 220px)
+    clamp(5rem, 11vw, 7.75rem);
+  box-sizing: border-box;
+}
+
+.faq1191__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: min(100%, 1000px);
+  margin-inline: auto;
+}
+
+.faq1191__header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  max-width: 673px;
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.faq1191__eyebrow {
+  margin: 0;
+  align-self: center;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  color: #070e41;
+  opacity: 0.7;
+}
+
+.faq1191__title {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.875rem, 4.2vw, 40px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #070e41;
+}
+
+.faq1191__title-muted {
+  font-weight: 500;
+  color: rgba(7, 14, 65, 0.4);
+}
+
+.faq1191__header-intro {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: rgba(7, 14, 65, 0.7);
+}
+
+.faq1191__header-intro p {
+  margin: 0;
+}
+
+/* Category block */
+.faq1191__groups {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 32px;
+}
+
+.faq1191-category {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 16px;
+}
+
+.faq1191-category__rail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 16px;
+}
+
+.faq1191-category__rule {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 1px;
+  background: #e6ebf4;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq1191-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+  height: 32px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(
+        120deg,
+        rgb(96, 140, 255) 7%,
+        rgb(12, 66, 206) 64%,
+        rgb(14, 20, 63) 97%
+      )
+      border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.faq1191-pill__txt {
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  background: linear-gradient(
+    123deg,
+    rgb(96, 140, 255) 0%,
+    rgb(12, 66, 206) 53%,
+    rgb(14, 20, 63) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@supports not (background-clip: text) {
+  .faq1191-pill__txt {
+    color: #070e41;
+    background: none;
+  }
+}
+
+.faq1191-category__items {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 4px;
+}
+
+.faq1191-item {
+  border-radius: 16px;
+  border: 1px solid #e6ebf4;
+  background: #f5f8fd;
+  overflow: hidden;
+}
+
+.faq1191-item__toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: clamp(14px, 3vw, 18px) 16px;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq1191-item__toggle:focus-visible {
+  outline: 2px solid rgb(96, 140, 255);
+  outline-offset: 2px;
+}
+
+.faq1191-item__question {
+  display: block;
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
+  color: #070e41;
+}
+
+.faq1191-item__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.faq1191-item__icon-wrap svg {
+  display: block;
+  color: #0c42ce;
+  transition: transform 0.22s ease;
+}
+
+.faq1191-item.is-open .faq1191-item__icon-wrap svg {
+  transform: rotate(180deg);
+}
+
+.faq1191-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+}
+
+.faq1191-item.is-open .faq1191-item__panel {
+  grid-template-rows: 1fr;
+}
+
+.faq1191-item__panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.faq1191-item__answer {
+  padding: 0 16px 18px;
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 140%;
+  color: rgba(7, 14, 65, 0.75);
+}

@@ -1,0 +1,472 @@
+/* Figma 1191:3081 — Processes / workflow (“6 section”) */
+
+.proc3081 {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  background: #ffffff;
+  padding: 120px clamp(1.25rem, 5.83vw, 84px) clamp(4rem, 10vw, 6.25rem);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Full-section dot matrix — sits behind all content */
+.proc3081__dot-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: rgba(217, 28, 157, 1);
+}
+
+.proc3081__dot-field-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: rgba(7, 14, 65, 1);
+  font-weight: 500;
+}
+
+.proc3081__canvas {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: clamp(620px, 72vh, 900px);
+  overflow: hidden;
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  text-align: left;
+}
+
+.proc3081__watermark {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(-0.75rem, -2vw, 0rem);
+  width: min(92vw, 1289px);
+  margin: 0;
+  font-family: Anton, sans-serif;
+  font-weight: 400;
+  font-size: clamp(4rem, 16vw, 316px);
+  line-height: 0.92;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  background: linear-gradient(180deg, #070e41 0%, rgba(7, 14, 65, 0) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.proc3081__tabs-wrap {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  margin-bottom: clamp(3rem, 8vw, 5.5rem);
+}
+
+.proc3081-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 6px;
+  box-sizing: border-box;
+  width: min(100%, 860px);
+  height: auto;
+  min-height: 48px;
+  padding: 2px;
+  border-radius: 999px;
+  background: #e6e7ec;
+}
+
+.proc3081-tabs__trigger {
+  flex: 1 1 0;
+  min-width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 2.4vw, 18px);
+  color: #070e41;
+  background: transparent;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.proc3081-tabs__trigger:hover:not(.proc3081-tabs__trigger--current) {
+  opacity: 0.85;
+}
+
+.proc3081-tabs__trigger--current {
+  background: #070e41;
+  color: #ffffff;
+}
+
+.proc3081-tabs__num {
+  opacity: 0.4;
+}
+
+.proc3081-tabs__trigger--current .proc3081-tabs__num {
+  opacity: 0.6;
+}
+
+.proc3081-tabs__trigger--current .proc3081-tabs__label {
+  opacity: 1;
+}
+
+/* Three columns — Figma 1191:3081 row: 349 | 447 | 400, width 1272, gap 38 */
+.proc3081__main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 349px 447px 400px;
+  align-items: center;
+  column-gap: 38px;
+  row-gap: 36px;
+  max-width: 1272px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.proc3081__left {
+  width: 349px;
+  max-width: 349px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.proc3081__left-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.proc3081__step-id {
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  color: rgba(7, 14, 65, 0.7);
+}
+
+.proc3081__headline {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 52px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #070e41;
+}
+
+.proc3081__cta {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 52px;
+  padding: 10px 12px 10px 16px;
+  border-radius: 16px;
+  border: 3px solid rgba(255, 255, 255, 1);
+  width: fit-content;
+  background: linear-gradient(
+    161.1deg,
+    rgb(96, 140, 255) 7.49%,
+    rgb(12, 66, 206) 74.28%,
+    rgb(14, 20, 63) 113.8%
+  );
+  box-shadow:
+    0 4px 8px rgba(12, 66, 206, 0.1),
+    0 8px 26.7px rgba(8, 37, 113, 0.2),
+    inset 0 0 10px rgb(255, 255, 255);
+  font-family: Archivo, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 132%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  transition:
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.proc3081__cta:hover {
+  filter: brightness(1.03);
+}
+
+.proc3081__cta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+.proc3081__cta-row {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.proc3081__cta-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+}
+
+.proc3081__cta-icon svg {
+  display: block;
+}
+
+.proc3081__figure {
+  margin: 0;
+  padding: 0;
+  width: 447px;
+  max-width: 447px;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Figma 1254:1699 — step preview 353×237 inside 447px center column */
+.proc3081__mockup--step-preview {
+  position: relative;
+  width: 353px;
+  height: 237px;
+  flex-shrink: 0;
+}
+
+/* Figma 1110:15029 — consultation mockup 442×237 inside 447px center column */
+.proc3081__mockup--consultation {
+  position: relative;
+  width: 442px;
+  height: 237px;
+  flex-shrink: 0;
+}
+
+.proc3081__mockup--step-preview > img,
+.proc3081__mockup--consultation > img:only-child {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.proc3081__mockup-you-wrap {
+  position: absolute;
+  left: 41.18%;
+  top: 20.25%;
+  width: 58.82%;
+  height: 79.73%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proc3081__mockup-you {
+  position: relative;
+  width: 96.32%;
+  height: 92.59%;
+  transform: rotate(3.27deg);
+  border: 4px solid #05b6aa;
+  border-radius: 24px;
+  background: #f4f4f4;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.proc3081__mockup-you-avatar {
+  position: absolute;
+  inset: 0;
+}
+
+.proc3081__mockup-you-ring {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.proc3081__mockup-you-ring--inner {
+  left: 36.41%;
+  top: 30.29%;
+  width: 23.96%;
+  height: auto;
+}
+
+.proc3081__mockup-you-ring--outer {
+  left: 50%;
+  top: 50%;
+  width: 32.76%;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.proc3081__mockup-you-letter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(24px, 8.1vw, 36px);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.proc3081__mockup-you-badge {
+  position: absolute;
+  right: 8.02%;
+  bottom: 4.59%;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 8px 2px 4px;
+  border-radius: 100px;
+  background: linear-gradient(
+    -9.74deg,
+    rgb(5, 182, 170) 47.27%,
+    rgb(0, 71, 255) 115.73%
+  );
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.proc3081__mockup-you-badge img {
+  display: block;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.proc3081__mockup-video-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 69.14%;
+  height: 93.84%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proc3081__mockup-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-3.38deg);
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.proc3081__mockup-video img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.proc3081__copy {
+  width: 400px;
+  max-width: 400px;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proc3081__p {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  color: rgba(7, 14, 65, 0.7);
+}
+
+@media (max-width: 1180px) {
+  .proc3081__main {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .proc3081__left {
+    max-width: none;
+    width: auto;
+    order: 1;
+  }
+
+  .proc3081__figure {
+    justify-self: center;
+    width: min(447px, 92vw);
+    max-width: min(447px, 92vw);
+    order: 2;
+  }
+
+  .proc3081__mockup--step-preview,
+  .proc3081__mockup--consultation {
+    width: min(353px, 92vw);
+    height: auto;
+    aspect-ratio: 353 / 237;
+  }
+
+  .proc3081__mockup--consultation {
+    width: min(442px, 92vw);
+    aspect-ratio: 442 / 237;
+  }
+
+  .proc3081__copy {
+    justify-self: start;
+    width: auto;
+    max-width: none;
+    order: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .proc3081-tabs {
+    flex-direction: column;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .proc3081-tabs__trigger {
+    width: 100%;
+    justify-content: center;
+  }
+}

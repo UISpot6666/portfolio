@@ -1,0 +1,362 @@
+/* Figma 1191:3239 — “7 section” UX → business impact
+   Background art: raster layer (node 1193:4538) + gradient on frame —
+   blobs approximate when asset not embedded. Export to:
+   `public/figma-assets/business-impact/section7-bg.png` and add
+   `.bis1191.has-bg-sheet` via prop if desired. */
+
+.bis1191 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(
+    120deg,
+    rgb(96, 140, 255) 7%,
+    rgb(12, 66, 206) 64%,
+    rgb(14, 20, 63) 97%
+  );
+  padding: clamp(5rem, 10.6vw, 9.5rem) clamp(1.5rem, 8vw, 220px)
+    clamp(4.75rem, 11vw, 9.75rem);
+  box-sizing: border-box;
+}
+
+.bis1191__sheet {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bis1191__sheet-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.bis1191.has-bg-sheet .bis1191-blob {
+  opacity: 0.42;
+}
+
+.bis1191.has-bg-sheet .bis1191-blob--b {
+  mix-blend-mode: soft-light;
+}
+
+.bis1191__blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.bis1191-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.55;
+}
+
+.bis1191-blob--a {
+  right: -420px;
+  top: clamp(90px, 14vw, 160px);
+  width: clamp(760px, 110vw, 1347px);
+  height: clamp(480px, 65vw, 704px);
+  transform: rotate(-18deg);
+  background: radial-gradient(
+    ellipse 70% 60% at 40% 40%,
+    rgba(0, 71, 255, 0.92) 0%,
+    rgba(5, 182, 170, 0.35) 45%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  box-shadow:
+    inset 0 27px 88px rgba(184, 204, 255, 0.45),
+    inset 0 -20px 60px rgba(14, 20, 63, 0.15);
+  filter: blur(1px);
+}
+
+.bis1191-blob--b {
+  left: -380px;
+  top: clamp(-220px, -12vw, -120px);
+  width: clamp(420px, 65vw, 727px);
+  height: clamp(240px, 36vw, 362px);
+  transform: rotate(12deg);
+  background: radial-gradient(
+    ellipse 65% 55% at 55% 50%,
+    rgba(166, 70, 235, 0.55) 0%,
+    rgba(0, 71, 255, 0.45) 40%,
+    rgba(255, 232, 245, 0.35) 100%
+  );
+  box-shadow:
+    inset 0 17px 55px rgba(240, 217, 255, 0.6),
+    inset 0 -10px 40px rgba(193, 125, 241, 0.25);
+}
+
+.bis1191__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+  width: min(100%, 1000px);
+  margin-inline: auto;
+}
+
+.bis1191__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.bis1191__title {
+  margin: 0;
+  max-width: 808px;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.875rem, 5vw, 52px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.bis1191__intro {
+  margin: 0;
+  max-width: 650px;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22.4px;
+  letter-spacing: -0.0089em;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.bis1191-card {
+  width: 100%;
+  border-radius: 24px;
+  border: 2px solid #e6ebf4;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bis1191-card__toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(16px, 3vw, 32px);
+  min-height: 56px;
+  padding: 0 24px;
+  background: #e6ebf4;
+  border-bottom: 1px solid #e5e7eb;
+  box-sizing: border-box;
+}
+
+.bis1191-toolbar__lead {
+  justify-self: start;
+  min-width: 0;
+}
+
+.bis1191-toolbar__center {
+  justify-self: center;
+  flex-shrink: 0;
+}
+
+.bis1191-toolbar__center svg {
+  display: block;
+  flex-shrink: 0;
+  color: rgba(7, 14, 65, 0.4);
+}
+
+.bis1191-toolbar__trail {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.bis1191-toolbar__trail svg {
+  flex-shrink: 0;
+  color: rgba(7, 14, 65, 0.4);
+}
+
+.bis1191-toolbar__label {
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #070e41;
+  text-align: left;
+}
+
+.bis1191-toolbar__trail .bis1191-toolbar__label {
+  text-align: left;
+}
+
+.bis1191-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: #ffffff;
+  overflow: hidden;
+}
+
+@media (max-width: 860px) {
+  .bis1191-card__body {
+    grid-template-columns: 1fr;
+  }
+
+  .bis1191-panel--design {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
+
+.bis1191-panel {
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.bis1191-panel--design {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.bis1191-panel__heading {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: clamp(22px, 4.5vw, 32px);
+  line-height: 120%;
+  color: #070e41;
+  text-align: left;
+}
+
+@media (min-width: 861px) {
+  .bis1191-panel--design {
+    min-height: 216px;
+  }
+}
+
+.bis1191-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.bis1191-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #070e41;
+}
+
+.bis1191-panel--impact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #f5f8fd;
+}
+
+.bis1191-panel--impact-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+@media (min-width: 861px) {
+  .bis1191-panel--impact-inner {
+    min-height: 168px;
+  }
+}
+
+.bis1191-impact__title {
+  margin: 0;
+  flex: 1 1 auto;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: clamp(22px, 4.5vw, 32px);
+  line-height: 120%;
+  text-align: left;
+}
+
+.bis1191-impact__gradient {
+  background: linear-gradient(
+    111deg,
+    rgb(96, 140, 255) 0%,
+    rgb(12, 66, 206) 32%,
+    rgb(14, 20, 63) 97%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bis1191-impact__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+}
+
+.bis1191-impact__sub {
+  margin: 0;
+  flex: 1 1 200px;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  color: #070e41;
+  opacity: 0.8;
+}
+
+.bis1191-impact__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  height: 32px;
+  padding: 10px;
+  margin: 0;
+  border: 2px solid rgba(7, 14, 65, 0.1);
+  border-radius: 8px;
+  background: transparent;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #070e41;
+  opacity: 0.8;
+  cursor: default;
+}
+
+.bis1191-impact__cta:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.bis1191-impact__cta:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+.bis1191-impact__cta:disabled {
+  pointer-events: none;
+}

@@ -1,0 +1,79 @@
+/*
+ * Pixel match Figma 1174:675 “Link - buy now first fold”
+ * layout: hug × 52px, padding 10 12 10 16, radius 16, border 3px rgba(255,255,255,0.1)
+ * inner Frame 2147226330: gap 4px between label + SVG (26×26)
+ */
+
+.figma-primary-cta-675-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.figma-primary-cta-675 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  height: 52px;
+  padding: 10px 12px 10px 16px;
+  border-radius: 16px;
+  border: 3px solid rgba(130, 149, 213, 1);
+  background: linear-gradient(161deg, rgba(241, 245, 255, 1) 0%, rgba(171, 185, 232, 1) 100%);
+  box-shadow:
+    0 8px 26.700000762939453px rgba(22, 44, 122, 0.4),
+    0 4px 8px rgba(55, 97, 237, 0.4),
+    inset 0 0 10px rgb(255, 255, 255);
+  text-decoration: none;
+  color: #070e41;
+  transition:
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.figma-primary-cta-675:hover {
+  filter: brightness(1.02);
+}
+
+.figma-primary-cta-675:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+.figma-primary-cta-675__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.figma-primary-cta-675__label {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 132%;
+  text-align: center;
+  color: #070e41;
+  white-space: nowrap;
+}
+
+.figma-primary-cta-675__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-primary-cta-675__caption {
+  margin: 0;
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.8;
+}

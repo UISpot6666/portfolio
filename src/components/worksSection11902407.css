@@ -1,0 +1,232 @@
+/* Works section — Figma 1190:2407 (“3rd section”) */
+
+.works1190 {
+  width: 100%;
+  background: #f6f5f4;
+  padding: clamp(3rem, 8vw, 6.5rem) clamp(1.5rem, 5.83vw, 84px)
+    clamp(3.75rem, 10vw, 6.875rem);
+  box-sizing: border-box;
+}
+
+.works1190__inner {
+  max-width: 1272px;
+  margin-inline: auto;
+}
+
+.works1190__header {
+  margin: 0 auto clamp(3.5rem, 8vw, 4rem);
+  max-width: 507px;
+  text-align: center;
+}
+
+.works1190__title {
+  margin: 0 0 12px;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(2.25rem, 5vw, 52px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #070e41;
+}
+
+.works1190__subtitle {
+  margin: 0 auto;
+  max-width: 486px;
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22.4px;
+  letter-spacing: -0.009em;
+  text-align: center;
+  color: #070e41;
+  opacity: 0.8;
+}
+
+.works1190__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 52px;
+}
+
+@media (max-width: 900px) {
+  .works1190__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 8vw, 52px);
+  }
+}
+
+.works1190-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  box-sizing: border-box;
+}
+
+.works1190-card--featured {
+  grid-column: 1 / -1;
+  min-height: clamp(340px, 48vw, 643px);
+  aspect-ratio: 1272 / 643;
+}
+
+@media (max-width: 900px) {
+  .works1190-card--featured {
+    aspect-ratio: unset;
+    min-height: 320px;
+  }
+}
+
+.works1190-card--half {
+  min-height: clamp(320px, 42vw, 568px);
+  aspect-ratio: 610 / 568;
+}
+
+@media (max-width: 900px) {
+  .works1190-card--half {
+    aspect-ratio: unset;
+    min-height: 280px;
+  }
+}
+
+.works1190-card--mint {
+  background: linear-gradient(
+    150deg,
+    rgb(175, 236, 240) 0%,
+    rgb(217, 248, 250) 45%,
+    rgb(239, 252, 254) 100%
+  );
+}
+
+.works1190-card--pink {
+  background: #ffcff9;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.works1190-card__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.works1190-card__tags {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 540px) {
+  .works1190-card__tags {
+    left: clamp(16px, 6vw, 32px);
+    right: clamp(16px, 6vw, 32px);
+  }
+}
+
+.works1190-card__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 100px;
+  background: #ffffff;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  color: #070e41;
+}
+
+.works1190-card__title {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  z-index: 2;
+  margin: 0;
+  max-width: calc(100% - 64px);
+  font-family: Archivo, sans-serif;
+  font-weight: 600;
+  font-size: clamp(18px, 3vw, 24px);
+  line-height: 120%;
+  color: #070e41;
+}
+
+@media (max-width: 540px) {
+  .works1190-card__title {
+    left: clamp(16px, 6vw, 32px);
+    bottom: clamp(16px, 6vw, 32px);
+    max-width: calc(100% - clamp(32px, 12vw, 64px));
+  }
+}
+
+/* “View more projects” — Figma node 1190:2520 */
+.works1190__cta-shell {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+@media (max-width: 900px) {
+  .works1190__cta-shell {
+    margin-top: clamp(48px, 12vw, 80px);
+  }
+}
+
+.works1190__cta {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  padding: 10px 12px 10px 16px;
+  border-radius: 16px;
+  border: 3px solid rgba(7, 14, 65, 0.1);
+  background: transparent;
+  font-family: Archivo, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 132%;
+  color: #070e41;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.works1190__cta:hover {
+  background: rgba(7, 14, 65, 0.04);
+  border-color: rgba(7, 14, 65, 0.18);
+}
+
+.works1190__cta:focus-visible {
+  outline: 2px solid rgba(7, 14, 65, 0.45);
+  outline-offset: 2px;
+}
+
+.works1190__cta-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.works1190__cta-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: #070e41;
+}
+
+.works1190__cta-icon svg {
+  display: block;
+}

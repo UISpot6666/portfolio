@@ -1,0 +1,203 @@
+/* Figma 1191:2779 — “5 section” services */
+
+.services1191 {
+  width: 100%;
+  background: #f6f5f4;
+  padding: clamp(6rem, 12vw, 9.5rem) clamp(1.5rem, 5.9vw, 85px)
+    clamp(6rem, 14vw, 10rem);
+  box-sizing: border-box;
+}
+
+.services1191__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+  width: 100%;
+  max-width: 1270px;
+  margin-inline: auto;
+}
+
+.services1191__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 32px;
+  width: 100%;
+  max-width: 851px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.services1191__eyebrow {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.125rem, 2.5vw, 24px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #070e41;
+  opacity: 0.6;
+}
+
+.services1191__headline {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.875rem, 5vw, 52px);
+  line-height: 104%;
+  letter-spacing: -0.01em;
+  color: #070e41;
+}
+
+.services1191__headline-accent {
+  background: linear-gradient(90deg, #0e143f 0%, #0047ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.services1191__headline-muted {
+  color: rgba(7, 14, 65, 0.6);
+}
+
+.services1191__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.services1191-row {
+  display: grid;
+  gap: 32px;
+  /* Figma: wide 770 · narrow 468 (row 1: wide · narrow / row 2: narrow · wide via modifier) */
+  grid-template-columns: minmax(0, 770px) 468px;
+}
+
+.services1191-row--narrow-start {
+  grid-template-columns: 468px minmax(0, 770px);
+}
+
+@media (max-width: 1024px) {
+  .services1191-row,
+  .services1191-row--narrow-start {
+    grid-template-columns: 1fr;
+  }
+
+  .services1191-card {
+    height: auto;
+    min-height: min(446px, 72vw);
+    aspect-ratio: 468 / 446;
+  }
+
+  .services1191-card--wide {
+    aspect-ratio: 770 / 446;
+  }
+}
+
+.services1191-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #ffffff;
+  height: 446px;
+}
+
+.services1191-card__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services1191-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  font-family: Archivo, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #070e41;
+}
+
+.services1191-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services1191-card__title {
+  margin: 0;
+  font-family: Archivo, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #070e41;
+  text-align: left;
+}
+
+.services1191-card__overlay-wide {
+  position: absolute;
+  inset: 32px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: min(380px, calc(100% - 48px));
+  pointer-events: none;
+}
+
+.services1191-card__overlay-wide .services1191-chip {
+  pointer-events: auto;
+}
+
+.services1191-card__spacer {
+  flex: 1 1 auto;
+  min-height: clamp(80px, 18vw, 240px);
+}
+
+.services1191-card__overlay-wide .services1191-card__tags {
+  flex-shrink: 0;
+}
+
+.services1191-card__overlay-wide .services1191-card__title {
+  flex-shrink: 0;
+}
+
+.services1191-card__overlay-narrow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.services1191-card--narrow .services1191-chip {
+  pointer-events: auto;
+}
+
+.services1191-card--narrow .services1191-card__tags {
+  position: absolute;
+  top: 32px;
+  left: 34px;
+  max-width: calc(100% - 68px);
+}
+
+.services1191-card--narrow .services1191-card__title {
+  position: absolute;
+  left: clamp(28px, 5vw, 34px);
+  bottom: 32px;
+  max-width: calc(100% - 64px);
+}
