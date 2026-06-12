@@ -103,7 +103,7 @@ export function BusinessImpactSection({
       : 'bis1191'
 
   return (
-    <section id={id} className={sectionClass} aria-labelledby={titleId}>
+    <section id={id} className={sectionClass} aria-labelledby={titleId} data-header-theme="light">
       {backgroundImageSrc ? (
         <div className="bis1191__sheet" aria-hidden>
           <img

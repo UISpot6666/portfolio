@@ -14,9 +14,11 @@ export function HeroPortfolio561() {
     <section
       className="relative flex min-h-[940px] w-full flex-col overflow-hidden bg-[#0e143f] font-['Archivo',sans-serif] text-white"
       aria-labelledby="hero-portfolio-heading"
+      data-header-theme="light"
     >
       <HeroPortfolioBackground />
       <HeroPortfolioNavbar />
+      <div className="h-[72px] shrink-0" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[812px] flex-1 flex-col items-center px-6 pb-16 pt-[7.75rem] text-center md:px-0 md:pb-[4.5rem] md:pt-[138px]">
         <FloatingCards561 />

@@ -34,7 +34,12 @@ export function PortfolioPage() {
       <ProcessesSection id="workflow" />
       <BusinessImpactSection backgroundImageSrc="/figma-assets/business-impact/section7-bg.png" />
       <FaqSection11913360 id="faqs" />
-      <ClosingFooter11913653 contactSectionId="contact" />
+      <ClosingFooter11913653
+        contactSectionId="contact"
+        email="asach6666@gmail.com"
+        startConversationHref="mailto:asach6666@gmail.com"
+        bookCallHref="https://calendly.com/asach6666/30-minute-meeting-clone"
+      />
     </main>
   )
 }

@@ -19,6 +19,7 @@ export function ServicesSection({ id }: ServicesSectionProps) {
       id={id}
       className="services1191"
       aria-labelledby="services1191-heading"
+      data-header-theme="dark"
     >
       <div className="services1191__inner">
         <header className="services1191__intro">

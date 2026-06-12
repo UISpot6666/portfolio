@@ -47,7 +47,7 @@
   margin: 0;
   font-family: Anton, sans-serif;
   font-weight: 400;
-  font-size: clamp(4rem, 16vw, 316px);
+  font-size: clamp(4rem, 19.33vw, 312px);
   line-height: 0.92;
   text-align: center;
   text-transform: uppercase;
@@ -262,8 +262,7 @@
   flex-shrink: 0;
 }
 
-.proc3081__mockup--step-preview > img,
-.proc3081__mockup--consultation > img:only-child {
+.proc3081__mockup--step-preview > img {
   position: absolute;
   inset: 0;
   display: block;
@@ -273,6 +272,131 @@
   object-fit: cover;
   object-position: center;
   pointer-events: none;
+}
+
+/* Figma 1294:879 — visual showcase frame (352×236 centered in 442×237) */
+.proc3081__visual-frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 352px;
+  height: 236px;
+  background: #070e41;
+  border: 5px solid #05b6aa;
+  border-radius: 30px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.proc3081__visual-screen {
+  position: absolute;
+  left: 50%;
+  top: 21px;
+  transform: translateX(-50%);
+  width: 298px;
+  height: 184px;
+  overflow: hidden;
+}
+
+.proc3081__visual-screen img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.proc3081__visual-guide {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.proc3081__visual-guide--top,
+.proc3081__visual-guide--bottom {
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.proc3081__visual-guide--top {
+  top: 21px;
+}
+
+.proc3081__visual-guide--bottom {
+  top: 202px;
+}
+
+.proc3081__visual-guide--left,
+.proc3081__visual-guide--right {
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.proc3081__visual-guide--left {
+  left: 22px;
+}
+
+.proc3081__visual-guide--right {
+  left: 320px;
+}
+
+/* Figma 1297:1255 — launch showcase frame (352×236 centered in 442×237) */
+.proc3081__launch-frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 352px;
+  height: 236px;
+  border: 5px solid #05b6aa;
+  border-radius: 30px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.proc3081__launch-tint {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: #e8f1ff;
+  pointer-events: none;
+}
+
+.proc3081__launch-media {
+  position: absolute;
+  left: -13px;
+  top: -79px;
+  width: 360px;
+  height: 360px;
+  overflow: hidden;
+}
+
+.proc3081__launch-media img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.proc3081__launch-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 23.78px rgba(7, 76, 168, 0.5);
 }
 
 .proc3081__mockup-you-wrap {
@@ -300,8 +424,12 @@
 }
 
 .proc3081__mockup-you-avatar {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .proc3081__mockup-you-ring {
@@ -327,9 +455,8 @@
 
 .proc3081__mockup-you-letter {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 104px;
+  top: 61px;
   font-family: Archivo, sans-serif;
   font-weight: 500;
   font-size: clamp(24px, 8.1vw, 36px);
@@ -344,6 +471,8 @@
   bottom: 4.59%;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  height: 20px;
   gap: 2px;
   padding: 2px 8px 2px 4px;
   border-radius: 100px;
@@ -448,6 +577,51 @@
   .proc3081__mockup--consultation {
     width: min(442px, 92vw);
     aspect-ratio: 442 / 237;
+  }
+
+  .proc3081__visual-frame {
+    width: 79.64%;
+    height: 99.58%;
+    border-radius: 8.52%;
+  }
+
+  .proc3081__visual-screen {
+    top: 8.9%;
+    width: 84.66%;
+    height: 77.97%;
+  }
+
+  .proc3081__visual-guide--top {
+    top: 8.9%;
+  }
+
+  .proc3081__visual-guide--bottom {
+    top: 85.59%;
+  }
+
+  .proc3081__visual-guide--left {
+    left: 6.25%;
+  }
+
+  .proc3081__visual-guide--right {
+    left: 90.91%;
+  }
+
+  .proc3081__launch-frame {
+    width: 79.64%;
+    height: 99.58%;
+    border-radius: 8.52%;
+  }
+
+  .proc3081__launch-tint {
+    border-radius: inherit;
+  }
+
+  .proc3081__launch-media {
+    left: -3.7%;
+    top: -33.47%;
+    width: 102.27%;
+    height: 152.54%;
   }
 
   .proc3081__copy {

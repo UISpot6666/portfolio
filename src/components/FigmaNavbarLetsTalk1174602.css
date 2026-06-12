@@ -8,9 +8,8 @@
   height: 40px;
   padding: 10px 8px 10px 12px;
   border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid transparent;
   background: transparent;
-  color: #ffffff;
   font-weight: 600;
   font-size: 14px;
   line-height: 132%;
@@ -18,17 +17,48 @@
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.figma-nav-lets-talk-602:hover {
+.figma-nav-lets-talk-602--light {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.figma-nav-lets-talk-602--light:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.55);
 }
 
-.figma-nav-lets-talk-602:focus-visible {
+.figma-nav-lets-talk-602--light:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.85);
   outline-offset: 2px;
+}
+
+.figma-nav-lets-talk-602--light .figma-nav-lets-talk-602__icon {
+  color: #ffffff;
+}
+
+.figma-nav-lets-talk-602--dark {
+  border-color: rgba(14, 20, 63, 0.4);
+  color: #0e143f;
+}
+
+.figma-nav-lets-talk-602--dark:hover {
+  background: rgba(14, 20, 63, 0.04);
+  border-color: rgba(14, 20, 63, 0.55);
+}
+
+.figma-nav-lets-talk-602--dark:focus-visible {
+  outline: 2px solid rgba(14, 20, 63, 0.85);
+  outline-offset: 2px;
+}
+
+.figma-nav-lets-talk-602--dark .figma-nav-lets-talk-602__icon {
+  color: #0e143f;
 }
 
 .figma-nav-lets-talk-602__label {
@@ -42,7 +72,7 @@
   height: 26px;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
 .figma-nav-lets-talk-602__svg {

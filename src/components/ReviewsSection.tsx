@@ -108,7 +108,7 @@ export function ReviewsSection({ id }: ReviewsSectionProps) {
   }
 
   return (
-    <section id={id} className="reviews1191" aria-labelledby="reviews1191-heading">
+    <section id={id} className="reviews1191" aria-labelledby="reviews1191-heading" data-header-theme="dark">
       <div className="reviews1191__inner">
         <h2 id="reviews1191-heading" className="reviews1191__title">
           Loved by clients,

@@ -28,17 +28,17 @@ const FAQ_GROUPS_DEFAULT: FaqGroup[] = [
       {
         question: 'How much does your work cost?',
         answer:
-          'Every project starts with scope: goals, timelines, deliverables, and fidelity. Once that’s aligned, you get a transparent proposal — usually milestone-based — so pricing matches the work ahead, not a generic package.',
+          'Every project starts with scope: goals, timelines, deliverables, and fidelity. Once that’s aligned, you get a transparent proposal, usually milestone based, so pricing matches the work ahead, not a generic package.',
       },
       {
         question: 'Can I pay in installments?',
         answer:
-          'Yes — for scoped engagements payment is commonly split across milestones so cash flow stays predictable on both sides. We’ll align the schedule before any work begins.',
+          'Yes, for scoped engagements payment is commonly split across milestones so cash flow stays predictable on both sides. We’ll align the schedule before any work begins.',
       },
       {
         question: "Why don't you list fixed prices on your site?",
         answer:
-          'Because “a website”, “an app redesign”, or “a prototype” aren’t interchangeable units — context changes effort a lot. I’d rather anchor on outcomes and timelines than publish numbers that rarely fit real projects.',
+          'Because “a website”, “an app redesign”, or “a prototype” aren’t interchangeable units, context changes effort a lot. I’d rather anchor on outcomes and timelines than publish numbers that rarely fit real projects.',
       },
     ],
   },
@@ -53,7 +53,7 @@ const FAQ_GROUPS_DEFAULT: FaqGroup[] = [
       {
         question: 'How long will my project take?',
         answer:
-          'Depends on fidelity, stakeholder speed, number of scenarios, and how much product already exists. After a kickoff outline I’ll propose a phased timeline with checkpoints — not guesses from a brochure.',
+          'Depends on fidelity, stakeholder speed, number of scenarios, and how much product already exists. But I can give you an average estimates: Branding: 2 to 3 weeks. Website (up to 5 pages): 4 to 6 weeks. Web app: from 4 weeks depending on complexity.',
       },
     ],
   },
@@ -63,18 +63,18 @@ const FAQ_GROUPS_DEFAULT: FaqGroup[] = [
       {
         question: "What if I don't like what you deliver?",
         answer:
-          'Design is iterative: we converge through structured feedback loops and rationales tied to UX goals. Major disconnects typically mean unclear constraints — early alignment and phased reviews minimize that.',
+          'Design is iterative: we converge through structured feedback loops and rationales tied to UX goals. Major disconnects typically mean unclear constraints, early alignment and phased reviews minimize that.',
       },
       {
         question: 'Will you personally work on my project?',
         answer:
-          'Lead design and UX direction stays with me. If something needs specialised production (motion, illustration, dev handoff quirks), we’ll surface that early and integrate it cleanly.',
+          "Yes. From brief to final file, it's me. No juniors doing the work while you think you're talking to a senior. You hire me & I do the work.",
       },
       {
         question:
           'How do I know my project won’t get lost between other clients?',
         answer:
-          'Capacity gets managed consciously: I batch deep work blocks and keep roadmap visibility upfront. Expect clear ownership, weekly-visible progress, and agreed response windows.',
+          'Capacity gets managed consciously: I batch deep work blocks and keep roadmap visibility upfront. Expect clear ownership, weekly visible progress, and agreed response windows.',
       },
     ],
   },
@@ -138,7 +138,7 @@ export function FaqSection11913360({
   }, [])
 
   return (
-    <section id={id} className="faq1191" aria-labelledby={titleId}>
+    <section id={id} className="faq1191" aria-labelledby={titleId} data-header-theme="dark">
       <div className="faq1191__inner">
         <header className="faq1191__header">
           <p className="faq1191__eyebrow">{resolvedEyebrow}</p>

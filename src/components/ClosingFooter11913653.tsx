@@ -40,31 +40,31 @@ export type SocialLinkDef = {
 const DEFAULT_SOCIAL: readonly SocialLinkDef[] = [
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/',
+    href: 'https://www.linkedin.com/in/uispot/',
     icon: `${FOOTER_SOCIAL}/linkedin.svg`,
     iconWidth: 20,
   },
   {
     label: 'X',
-    href: 'https://x.com/',
+    href: 'https://x.com/UI_Spot',
     icon: `${FOOTER_SOCIAL}/twitter-x.svg`,
     iconWidth: 18.18,
   },
   {
     label: 'Behance',
-    href: 'https://www.behance.net/',
+    href: 'https://www.behance.net/angelinsachivk',
     icon: `${FOOTER_SOCIAL}/behance.svg`,
     iconWidth: 20,
   },
   {
     label: 'YouTube',
-    href: 'https://www.youtube.com/',
+    href: 'https://www.youtube.com/channel/UC4WoBXeCX3IOH_hMf2ixFfw',
     icon: `${FOOTER_SOCIAL}/youtube.svg`,
     iconWidth: 20,
   },
   {
     label: 'Medium',
-    href: 'https://medium.com/',
+    href: 'https://medium.com/@inesteticagency',
     icon: `${FOOTER_SOCIAL}/medium.svg`,
     iconWidth: 22,
   },
@@ -87,12 +87,8 @@ export function ClosingFooter11913653({
   bookCallHref,
   socialLinks = DEFAULT_SOCIAL,
 }: ClosingCtaFooter11913653Props) {
-  const mailInquiry = `mailto:${email}?subject=Project%20inquiry`
   const mailBare = `mailto:${email}`
-  const primaryHref =
-    startConversationHref != null && startConversationHref !== ''
-      ? startConversationHref
-      : mailInquiry
+  const primaryHref = startConversationHref || mailBare
 
   const bookHref =
     bookCallHref != null && bookCallHref !== ''
@@ -105,6 +101,7 @@ export function ClosingFooter11913653({
         id={contactSectionId}
         className="cf1193653-contact"
         aria-labelledby="cf1193653-heading"
+        data-header-theme="dark"
       >
         <div className="cf1193653-contact__deck" aria-hidden="true">
           <img
@@ -139,8 +136,9 @@ export function ClosingFooter11913653({
               Take your opportunity to build something great
             </h2>
             <p className="cf1193653-contact__subtitle">
-              Average project price ~$3-4k, projects are estimated and discussed
-              individually
+              You don&apos;t need all the answers before getting started. Reach
+              out, share your idea, and let&apos;s figure out the next steps
+              together.
             </p>
           </div>
 
@@ -171,7 +169,7 @@ export function ClosingFooter11913653({
         </div>
       </section>
 
-      <footer className="cf1193653-footer">
+      <footer className="cf1193653-footer" data-header-theme="dark">
         <div className="cf1193653-footer__inner">
           <div className="cf1193653-footer__top">
             <div className="cf1193653-footer__hero">

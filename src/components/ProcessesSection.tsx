@@ -7,7 +7,12 @@ const PROC_ASSETS = {
   wave: '/figma-assets/processes/wave-ezgif-crop.png',
   research: '/figma-assets/processes/research-image.png',
   ux: '/figma-assets/processes/ux-image.png',
-  visual: '/figma-assets/processes/visual-image.png',
+  /** Figma 1294:881 — animated website preview inside visual frame */
+  visualPreview: '/figma-assets/processes/visual-preview.gif',
+  visualGuideH: '/figma-assets/processes/visual-guide-h.svg',
+  visualGuideV: '/figma-assets/processes/visual-guide-v.svg',
+  /** Figma 1299:624 — launch button preview inside final-phase frame */
+  launch: '/figma-assets/processes/launch-image.png',
   mic: '/figma-assets/processes/mic-icon.svg',
   avatarInner: '/figma-assets/processes/avatar-ring-inner.svg',
   avatarOuter: '/figma-assets/processes/avatar-ring-outer.svg',
@@ -16,7 +21,6 @@ const PROC_ASSETS = {
 const STEP_PREVIEW_IMAGES: Partial<Record<string, string>> = {
   '02': PROC_ASSETS.research,
   '03': PROC_ASSETS.ux,
-  '04': PROC_ASSETS.visual,
 }
 
 type ProcessPhase = {
@@ -81,34 +85,89 @@ const PROCESS_PHASES = [
   },
 ] as const satisfies readonly ProcessPhase[]
 
-/** Figma 1110:15029 — consultation cards; Figma 1254:1699 — full-bleed step preview */
+type MockupVariant = 'step-preview' | 'visual-showcase' | 'launch-showcase' | 'consultation-overlay'
+
+/** Figma 1110:15029 — consultation; 1254:1699 — step preview; 1294:879 — visual; 1297:1255 — launch */
+function ProcessesVisualShowcase() {
+  return (
+    <div className="proc3081__visual-frame">
+      <div className="proc3081__visual-screen">
+        <img src={PROC_ASSETS.visualPreview} alt="" decoding="async" />
+      </div>
+      <img
+        className="proc3081__visual-guide proc3081__visual-guide--top"
+        src={PROC_ASSETS.visualGuideH}
+        alt=""
+        aria-hidden
+      />
+      <img
+        className="proc3081__visual-guide proc3081__visual-guide--bottom"
+        src={PROC_ASSETS.visualGuideH}
+        alt=""
+        aria-hidden
+      />
+      <img
+        className="proc3081__visual-guide proc3081__visual-guide--left"
+        src={PROC_ASSETS.visualGuideV}
+        alt=""
+        aria-hidden
+      />
+      <img
+        className="proc3081__visual-guide proc3081__visual-guide--right"
+        src={PROC_ASSETS.visualGuideV}
+        alt=""
+        aria-hidden
+      />
+    </div>
+  )
+}
+
+function ProcessesLaunchShowcase() {
+  return (
+    <div className="proc3081__launch-frame">
+      <div className="proc3081__launch-tint" aria-hidden />
+      <div className="proc3081__launch-media">
+        <img src={PROC_ASSETS.launch} alt="" decoding="async" />
+      </div>
+      <div className="proc3081__launch-glow" aria-hidden />
+    </div>
+  )
+}
+
 function ProcessesHeroMockup({
   previewSrc,
-  showConsultationOverlay,
-  useConsultationFrame,
+  variant,
 }: {
   previewSrc: string
-  showConsultationOverlay: boolean
-  useConsultationFrame?: boolean
+  variant: MockupVariant
 }) {
-  if (!showConsultationOverlay) {
+  if (variant === 'step-preview') {
     return (
-      <div
-        className={
-          useConsultationFrame
-            ? 'proc3081__mockup proc3081__mockup--consultation'
-            : 'proc3081__mockup proc3081__mockup--step-preview'
-        }
-        aria-hidden
-      >
+      <div className="proc3081__mockup proc3081__mockup--step-preview" aria-hidden>
         <img src={previewSrc} alt="" decoding="async" />
+      </div>
+    )
+  }
+
+  if (variant === 'visual-showcase') {
+    return (
+      <div className="proc3081__mockup proc3081__mockup--consultation" aria-hidden>
+        <ProcessesVisualShowcase />
+      </div>
+    )
+  }
+
+  if (variant === 'launch-showcase') {
+    return (
+      <div className="proc3081__mockup proc3081__mockup--consultation" aria-hidden>
+        <ProcessesLaunchShowcase />
       </div>
     )
   }
 
   return (
     <div className="proc3081__mockup proc3081__mockup--consultation" aria-hidden>
-      <div className="proc3081__mockup-you-wrap" hidden={!showConsultationOverlay}>
+      <div className="proc3081__mockup-you-wrap">
         <div className="proc3081__mockup-you">
           <div className="proc3081__mockup-you-avatar">
             <img
@@ -188,6 +247,7 @@ export function ProcessesSection({ id }: ProcessesSectionProps) {
       ref={sectionRef}
       className="proc3081"
       aria-labelledby={headingId}
+      data-header-theme="dark"
     >
       <ProcessesDotNet containerRef={sectionRef} />
       <div className="proc3081__canvas">
@@ -247,10 +307,15 @@ export function ProcessesSection({ id }: ProcessesSectionProps) {
           <figure className="proc3081__figure">
             <ProcessesHeroMockup
               previewSrc={STEP_PREVIEW_IMAGES[phase.id] ?? PROC_ASSETS.wave}
-              showConsultationOverlay={
-                phase.id !== '02' && phase.id !== '03' && phase.id !== '04'
+              variant={
+                phase.id === '04'
+                  ? 'visual-showcase'
+                  : phase.id === '05'
+                    ? 'launch-showcase'
+                    : phase.id === '02' || phase.id === '03'
+                      ? 'step-preview'
+                      : 'consultation-overlay'
               }
-              useConsultationFrame={phase.id === '04'}
             />
           </figure>
 

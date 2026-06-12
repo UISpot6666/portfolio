@@ -1,0 +1,14 @@
+.hero-portfolio-navbar__logo,
+.hero-portfolio-navbar__link {
+  transition: color 0.3s ease;
+}
+
+.hero-portfolio-navbar--light .hero-portfolio-navbar__logo,
+.hero-portfolio-navbar--light .hero-portfolio-navbar__link {
+  color: #ffffff;
+}
+
+.hero-portfolio-navbar--dark .hero-portfolio-navbar__logo,
+.hero-portfolio-navbar--dark .hero-portfolio-navbar__link {
+  color: #0e143f;
+}

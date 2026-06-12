@@ -39,7 +39,7 @@ function WorksCtaArrow() {
  */
 export function WorksSection({ id }: WorksSectionProps) {
   return (
-    <section id={id} className="works1190" aria-labelledby="works-heading">
+    <section id={id} className="works1190" aria-labelledby="works-heading" data-header-theme="dark">
       <div className="works1190__inner">
         <header className="works1190__header">
           <h2 id="works-heading" className="works1190__title">

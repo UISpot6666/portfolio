@@ -112,15 +112,15 @@
 }
 
 .cf1193653-contact__subtitle {
-  margin: 0 auto;
-  width: 100%;
+  margin: 0;
+  width: 100px;
+  height: fit-content;
   min-width: 30px;
-  max-width: 400px;
   font-family: Archivo, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 22.4px;
-  letter-spacing: -0.0089em;
+  letter-spacing: 0;
   color: #070e41;
   opacity: 0.8;
 }
@@ -372,7 +372,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  width: fit-content;
   padding: 0;
   margin: 0;
   list-style: none;

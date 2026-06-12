@@ -19,7 +19,7 @@ export function AboutSection() {
   const tickerLogos = [...PARTNER_LOGOS, ...PARTNER_LOGOS]
 
   return (
-    <section id="about" className="about2111" aria-labelledby="about-heading">
+    <section id="about" className="about2111" aria-labelledby="about-heading" data-header-theme="dark">
       <div className="about2111__logos" aria-label="Partner logos">
         <div className="about2111__logos-viewport">
           <div className="about2111__logos-track">

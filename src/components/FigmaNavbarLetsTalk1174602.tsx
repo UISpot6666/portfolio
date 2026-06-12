@@ -7,6 +7,8 @@ import './FigmaNavbarLetsTalk1174602.css'
 export type FigmaNavbarLetsTalk1174602Props = {
   href?: string
   className?: string
+  /** Matches portfolio header palette — `light` on dark sections, `dark` on light sections. */
+  theme?: 'light' | 'dark'
 }
 
 /** 26×26 frame, 18×18 graphic at (4,4) — same geometry as hero primary CTA icon, stroke white */
@@ -37,11 +39,12 @@ function LetsTalkIcon602() {
 export function FigmaNavbarLetsTalk1174602({
   href = '#contact',
   className = '',
+  theme = 'light',
 }: FigmaNavbarLetsTalk1174602Props) {
   return (
     <a
       href={href}
-      className={`figma-nav-lets-talk-602 font-['Archivo',sans-serif] ${className}`.trim()}
+      className={`figma-nav-lets-talk-602 figma-nav-lets-talk-602--${theme} font-['Archivo',sans-serif] ${className}`.trim()}
     >
       <span className="figma-nav-lets-talk-602__label">Let&apos;s Talk</span>
       <span className="figma-nav-lets-talk-602__icon" aria-hidden>
