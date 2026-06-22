@@ -2,12 +2,18 @@
 
 .about2111 {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   min-height: 940px;
   background: #ffffff;
   padding: clamp(2rem, 5vw, 8.5rem) clamp(1.5rem, 8vw, 220px)
     clamp(4rem, 10vw, 7.5rem);
   box-sizing: border-box;
+  text-align: left;
+  vertical-align: bottom;
 }
 
 @media (max-width: 1024px) {
@@ -161,13 +167,6 @@
   min-width: 650px;
 }
 
-@media (max-width: 640px) {
-  .about2111__headline {
-    font-size: clamp(1.875rem, 8vw, 2.5rem);
-    letter-spacing: -0.01em;
-  }
-}
-
 .about2111__stats {
   display: flex;
   flex-direction: column;
@@ -247,4 +246,204 @@
   line-height: 120%;
   color: #070e41;
   opacity: 0.6;
+}
+
+/* ── Tablet — Figma 1311:577 (768–1279px) ── */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .about2111 {
+    min-height: 0;
+    padding: 32px 40px 100px;
+    overflow-x: clip;
+  }
+
+  .about2111__logos {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 80px;
+  }
+
+  .about2111__logo-slot {
+    width: 149.35px;
+    height: 60px;
+  }
+
+  .about2111__logo {
+    max-height: 60px;
+  }
+
+  .about2111__logos-track {
+    gap: 0;
+  }
+
+  .about2111__inner {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: 0;
+    gap: 48px;
+  }
+
+  .about2111__intro {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .about2111__badge {
+    display: none;
+  }
+
+  .about2111__headline {
+    max-width: 560px;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.32px;
+  }
+
+  .about2111__headline-line {
+    display: inline;
+  }
+
+  .about2111__headline-strong {
+    min-width: 0;
+    letter-spacing: inherit;
+  }
+
+  .about2111__stats {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .about2111__stats > .stat-item {
+    flex: none;
+    width: 100%;
+  }
+
+  .about2111 .stat-item {
+    gap: 12px;
+  }
+
+  .about2111 .stat-item__value {
+    font-size: 52px;
+    line-height: 104%;
+    letter-spacing: -0.52px;
+    text-align: left;
+  }
+
+  .about2111 .stat-item__value--align-center {
+    text-align: left;
+  }
+
+  .about2111 .stat-item__title {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .about2111 .stat-item__description {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
+/* ── Mobile — Figma 1316:83 (320–767px) ── */
+@media (max-width: 767px) {
+  .about2111 {
+    min-height: 0;
+    padding: 20px 16px 48px;
+    overflow-x: clip;
+  }
+
+  .about2111__logos {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 80px;
+  }
+
+  .about2111__logo-slot {
+    width: 124.46px;
+    height: 50px;
+  }
+
+  .about2111__logo {
+    max-height: 50px;
+  }
+
+  .about2111__logos-track {
+    gap: 7px;
+  }
+
+  .about2111__inner {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    gap: 40px;
+  }
+
+  .about2111__intro {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  .about2111__badge {
+    display: none;
+  }
+
+  .about2111__headline {
+    max-width: 100%;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.24px;
+  }
+
+  .about2111__headline-line {
+    display: inline;
+  }
+
+  .about2111__headline-strong {
+    min-width: 0;
+    letter-spacing: inherit;
+  }
+
+  .about2111__stats {
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .about2111__stats > .stat-item {
+    flex: none;
+    width: 100%;
+  }
+
+  .about2111 .stat-item {
+    gap: 8px;
+  }
+
+  .about2111 .stat-item__value {
+    font-size: 40px;
+    line-height: 104%;
+    letter-spacing: -0.4px;
+    text-align: left;
+  }
+
+  .about2111 .stat-item__value--align-center {
+    text-align: left;
+  }
+
+  .about2111 .stat-item__title {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .about2111 .stat-item__description {
+    font-size: 14px;
+    line-height: 1.2;
+    width: 100%;
+    max-width: 100%;
+  }
 }

@@ -12,3 +12,450 @@
 .hero-portfolio-navbar--dark .hero-portfolio-navbar__link {
   color: #0e143f;
 }
+
+/* Mobile-only elements hidden on desktop */
+.hero-portfolio-navbar__menu-toggle,
+.hero-portfolio-navbar__panel {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .hero-portfolio-navbar {
+    padding-inline: 16px !important;
+    backdrop-filter: blur(60px) !important;
+    -webkit-backdrop-filter: blur(60px) !important;
+  }
+
+  .hero-portfolio-navbar__logo {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    width: 110px;
+  }
+
+  .hero-portfolio-navbar__desktop-nav,
+  .hero-portfolio-navbar__desktop-cta {
+    display: none !important;
+  }
+
+  .hero-portfolio-navbar__menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-shrink: 0;
+    height: 40px;
+    margin: 0;
+    padding: 10px 8px 10px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition:
+      background-color 0.28s ease,
+      border-color 0.28s ease,
+      opacity 0.28s ease;
+  }
+
+  .hero-portfolio-navbar--dark .hero-portfolio-navbar__menu-toggle {
+    border-color: rgba(14, 20, 63, 0.4);
+    color: #0e143f;
+    --stroke-0: #0e143f;
+  }
+
+  .hero-portfolio-navbar--dark.hero-portfolio-navbar--menu-open
+    .hero-portfolio-navbar__menu-toggle {
+    background: rgba(14, 20, 63, 0.08);
+    border-color: rgba(14, 20, 63, 0.4);
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__menu-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .hero-portfolio-navbar__menu-toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 2px;
+  }
+
+  .hero-portfolio-navbar--dark .hero-portfolio-navbar__menu-toggle:focus-visible {
+    outline-color: rgba(14, 20, 63, 0.85);
+  }
+
+  .hero-portfolio-navbar__menu-label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 132%;
+    white-space: nowrap;
+  }
+
+  .hero-portfolio-navbar__menu-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-portfolio-navbar__menu-icon {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 26px;
+    height: 26px;
+    color: inherit;
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease;
+  }
+
+  .hero-portfolio-navbar__menu-icon--open {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .hero-portfolio-navbar__menu-icon--close {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__menu-icon--open {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__menu-icon--close {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .hero-portfolio-navbar__panel {
+    position: absolute;
+    top: 64px;
+    left: 16px;
+    right: 16px;
+    display: block;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.04);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease,
+      visibility 0.28s ease;
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .hero-portfolio-navbar__panel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hero-portfolio-navbar__panel-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-portfolio-navbar__panel-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 8px 4px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #070e41;
+    transition: background-color 0.18s ease;
+  }
+
+  .hero-portfolio-navbar__panel-link:hover,
+  .hero-portfolio-navbar__panel-link:focus-visible {
+    background: rgba(7, 14, 65, 0.04);
+  }
+
+  .hero-portfolio-navbar__panel-link:active {
+    background: rgba(7, 14, 65, 0.08);
+  }
+
+  .hero-portfolio-navbar__panel-link:focus-visible {
+    outline: 2px solid rgba(96, 140, 255, 0.55);
+    outline-offset: 1px;
+  }
+
+  .hero-portfolio-navbar__panel-icon-wrap {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f6f5f4;
+  }
+
+  .hero-portfolio-navbar__panel-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+  }
+
+  .hero-portfolio-navbar__panel-label {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: Archivo, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 132%;
+    text-align: left;
+    color: #070e41;
+  }
+
+  .hero-portfolio-navbar__panel-chevron {
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ── Tablet nav — Figma 1311:294 (640–1279px, Menu pill) ── */
+@media (min-width: 640px) and (max-width: 1279px) {
+  .hero-portfolio-navbar {
+    padding-inline: 40px !important;
+    backdrop-filter: blur(60px) !important;
+    -webkit-backdrop-filter: blur(60px) !important;
+  }
+
+  .hero-portfolio-navbar__logo {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    width: 110px;
+  }
+
+  .hero-portfolio-navbar__desktop-nav,
+  .hero-portfolio-navbar__desktop-cta {
+    display: none !important;
+  }
+
+  .hero-portfolio-navbar__menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-shrink: 0;
+    height: 40px;
+    margin: 0;
+    padding: 10px 8px 10px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition:
+      background-color 0.28s ease,
+      border-color 0.28s ease,
+      opacity 0.28s ease;
+  }
+
+  .hero-portfolio-navbar--dark .hero-portfolio-navbar__menu-toggle {
+    border-color: rgba(14, 20, 63, 0.4);
+    color: #0e143f;
+    --stroke-0: #0e143f;
+  }
+
+  .hero-portfolio-navbar--dark.hero-portfolio-navbar--menu-open
+    .hero-portfolio-navbar__menu-toggle {
+    background: rgba(14, 20, 63, 0.08);
+    border-color: rgba(14, 20, 63, 0.4);
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__menu-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .hero-portfolio-navbar__menu-toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 2px;
+  }
+
+  .hero-portfolio-navbar--dark .hero-portfolio-navbar__menu-toggle:focus-visible {
+    outline-color: rgba(14, 20, 63, 0.85);
+  }
+
+  .hero-portfolio-navbar__menu-label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 132%;
+    white-space: nowrap;
+  }
+
+  .hero-portfolio-navbar__menu-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-portfolio-navbar__menu-icon {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 26px;
+    height: 26px;
+    color: inherit;
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease;
+  }
+
+  .hero-portfolio-navbar__menu-icon--open {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .hero-portfolio-navbar__menu-icon--close {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__menu-icon--open {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__menu-icon--close {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .hero-portfolio-navbar__panel {
+    position: absolute;
+    top: 64px;
+    left: 40px;
+    right: 40px;
+    display: block;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.04);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease,
+      visibility 0.28s ease;
+  }
+
+  .hero-portfolio-navbar--menu-open .hero-portfolio-navbar__panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .hero-portfolio-navbar__panel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hero-portfolio-navbar__panel-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-portfolio-navbar__panel-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 8px 4px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #070e41;
+    transition: background-color 0.18s ease;
+  }
+
+  .hero-portfolio-navbar__panel-link:hover,
+  .hero-portfolio-navbar__panel-link:focus-visible {
+    background: rgba(7, 14, 65, 0.04);
+  }
+
+  .hero-portfolio-navbar__panel-link:active {
+    background: rgba(7, 14, 65, 0.08);
+  }
+
+  .hero-portfolio-navbar__panel-link:focus-visible {
+    outline: 2px solid rgba(96, 140, 255, 0.55);
+    outline-offset: 1px;
+  }
+
+  .hero-portfolio-navbar__panel-icon-wrap {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f6f5f4;
+  }
+
+  .hero-portfolio-navbar__panel-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+  }
+
+  .hero-portfolio-navbar__panel-label {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: Archivo, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 132%;
+    text-align: left;
+    color: #070e41;
+  }
+
+  .hero-portfolio-navbar__panel-chevron {
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+}

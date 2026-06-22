@@ -1,5 +1,10 @@
 /* Works section — Figma 1190:2407 (“3rd section”) */
 
+/* Mobile card frame — matches Onboarding improvement, B2C_mobile.png (696×776) */
+:root {
+  --works1190-mobile-aspect: 616 / 696;
+}
+
 .works1190 {
   width: 100%;
   background: #f6f5f4;
@@ -48,13 +53,6 @@
   gap: 52px;
 }
 
-@media (max-width: 900px) {
-  .works1190__grid {
-    grid-template-columns: 1fr;
-    gap: clamp(28px, 8vw, 52px);
-  }
-}
-
 .works1190-card {
   position: relative;
   overflow: hidden;
@@ -68,23 +66,9 @@
   aspect-ratio: 1272 / 643;
 }
 
-@media (max-width: 900px) {
-  .works1190-card--featured {
-    aspect-ratio: unset;
-    min-height: 320px;
-  }
-}
-
 .works1190-card--half {
   min-height: clamp(320px, 42vw, 568px);
   aspect-ratio: 610 / 568;
-}
-
-@media (max-width: 900px) {
-  .works1190-card--half {
-    aspect-ratio: unset;
-    min-height: 280px;
-  }
 }
 
 .works1190-card--mint {
@@ -110,6 +94,22 @@
   object-fit: cover;
 }
 
+.works1190-card__tablet-visual {
+  display: none;
+}
+
+.works1190-ai-tablet-bg {
+  display: none;
+}
+
+.works1190-onboarding-tablet-bg {
+  display: none;
+}
+
+.works1190-card__mobile-bg {
+  display: none;
+}
+
 .works1190-card__tags {
   position: absolute;
   top: 32px;
@@ -121,13 +121,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-@media (max-width: 540px) {
-  .works1190-card__tags {
-    left: clamp(16px, 6vw, 32px);
-    right: clamp(16px, 6vw, 32px);
-  }
 }
 
 .works1190-card__tag {
@@ -160,26 +153,12 @@
   color: #070e41;
 }
 
-@media (max-width: 540px) {
-  .works1190-card__title {
-    left: clamp(16px, 6vw, 32px);
-    bottom: clamp(16px, 6vw, 32px);
-    max-width: calc(100% - clamp(32px, 12vw, 64px));
-  }
-}
-
 /* “View more projects” — Figma node 1190:2520 */
 .works1190__cta-shell {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   margin-top: 80px;
-}
-
-@media (max-width: 900px) {
-  .works1190__cta-shell {
-    margin-top: clamp(48px, 12vw, 80px);
-  }
 }
 
 .works1190__cta {
@@ -229,4 +208,428 @@
 
 .works1190__cta-icon svg {
   display: block;
+}
+
+/* ── Tablet — Figma 1316:1208 (640–1024px) ── */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .works1190 {
+    padding: 48px 40px 64px;
+    overflow-x: clip;
+  }
+
+  .works1190__header {
+    margin-bottom: 16px;
+    max-width: 560px;
+  }
+
+  .works1190__title {
+    font-size: 40px;
+    letter-spacing: -0.4px;
+    line-height: 104%;
+  }
+
+  .works1190__subtitle {
+    font-size: 18px;
+    line-height: 22.4px;
+    letter-spacing: -0.16px;
+  }
+
+  .works1190__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 560px;
+    max-width: 560px;
+    margin-inline: auto;
+    justify-items: center;
+  }
+
+  .works1190__cta-shell {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+  }
+
+  .works1190-card,
+  .works1190-card--featured,
+  .works1190-card--half {
+    width: 560px !important;
+    max-width: 560px !important;
+    height: 532px !important;
+    min-height: 532px !important;
+    max-height: 532px !important;
+    aspect-ratio: auto !important;
+    padding: 32px 40px !important;
+    border-radius: 32px !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(7, 13, 61, 0.06) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  .works1190-card--featured {
+    grid-column: 1 / -1;
+  }
+
+  .works1190-card--half.works1190-card--mint,
+  .works1190-card--half.works1190-card--pink {
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(7, 13, 61, 0.06) !important;
+  }
+
+  .works1190-card__tablet-visual {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100% - 72px) !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    z-index: 1 !important;
+    pointer-events: none;
+  }
+
+  .works1190-card--featured .works1190-card__tablet-visual {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    /* Crop baked-in black corner matte from Figma export */
+    transform: scale(1.12) !important;
+    transform-origin: center center !important;
+    z-index: 0 !important;
+    pointer-events: none;
+  }
+
+  .works1190-card--half.works1190-card--pink .works1190-card__tablet-visual {
+    display: none !important;
+  }
+
+  .works1190-card--half.works1190-card--pink .works1190-onboarding-tablet-bg {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    /* Crop baked-in corner matte from Figma export */
+    transform: scale(1.12) !important;
+    transform-origin: center center !important;
+    z-index: 0 !important;
+    pointer-events: none;
+  }
+
+  .works1190-card--half.works1190-card--pink .works1190-card__tags {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    position: absolute !important;
+    top: 32px !important;
+    left: 32px !important;
+    right: auto !important;
+    gap: 8px !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: calc(100% - 64px) !important;
+  }
+
+  .works1190-card--half.works1190-card--pink .works1190-card__tag {
+    height: 32px !important;
+    padding: 8px 12px !important;
+    border-radius: 100px !important;
+    background: #ffffff !important;
+    color: #070e41 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+  }
+
+  /* AI Marketing — tablet background + HTML chips (Figma 1321:69) */
+  .works1190-card--half.works1190-card--mint .works1190-card__tablet-visual {
+    display: none !important;
+  }
+
+  .works1190-card--half.works1190-card--mint .works1190-ai-tablet-bg {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    /* Crop baked-in corner matte from Figma export */
+    transform: scale(1.12) !important;
+    transform-origin: center center !important;
+    z-index: 0 !important;
+    pointer-events: none;
+  }
+
+  .works1190-card--half.works1190-card--mint .works1190-card__tags {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    position: absolute !important;
+    top: 32px !important;
+    left: 32px !important;
+    right: auto !important;
+    gap: 8px !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: calc(100% - 64px) !important;
+  }
+
+  .works1190-card--half.works1190-card--mint .works1190-card__tag {
+    height: 32px !important;
+    padding: 8px 12px !important;
+    border-radius: 100px !important;
+    background: #ffffff !important;
+    color: #070e41 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+  }
+
+  .works1190-card__media {
+    display: none !important;
+  }
+
+  .works1190-card__tags {
+    display: none !important;
+  }
+
+  .works1190-card--featured .works1190-card__tags {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    position: absolute !important;
+    top: 32px !important;
+    left: 40px !important;
+    right: auto !important;
+    z-index: 2 !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: calc(100% - 80px) !important;
+  }
+
+  .works1190-card--featured .works1190-card__tag {
+    height: 32px !important;
+    padding: 0 16px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+    border-radius: 999px !important;
+    background: #ffffff !important;
+    color: #070e41 !important;
+    box-shadow: 0 1px 4px rgba(7, 13, 61, 0.08);
+  }
+
+  .works1190-card__title {
+    position: absolute !important;
+    left: 40px !important;
+    bottom: 32px !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+    font-weight: 700 !important;
+    max-width: calc(100% - 80px) !important;
+    text-decoration: none !important;
+    color: #070e41 !important;
+  }
+}
+
+/* ── Mobile — Figma 1316:443 (≤639px) ── */
+@media (max-width: 639px) {
+  .works1190 {
+    padding: 48px 16px 40px;
+    overflow-x: clip;
+  }
+
+  .works1190__header {
+    margin-bottom: 32px;
+    max-width: 288px;
+  }
+
+  .works1190__title {
+    margin-bottom: 12px;
+    font-size: 32px;
+    letter-spacing: -0.32px;
+    line-height: 104%;
+  }
+
+  .works1190__subtitle {
+    font-size: 14px;
+    line-height: 22.4px;
+    letter-spacing: -0.16px;
+    max-width: 100%;
+  }
+
+  .works1190__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 308px;
+    max-width: 308px;
+    margin-inline: auto;
+    justify-items: center;
+  }
+
+  .works1190__cta-shell {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+  }
+
+  .works1190-card,
+  .works1190-card--featured,
+  .works1190-card--half {
+    width: 308px !important;
+    max-width: 308px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: var(--works1190-mobile-aspect) !important;
+    padding: 0 !important;
+    border-radius: 24px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 20px rgba(7, 14, 65, 0.08) !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  .works1190-card--featured {
+    grid-column: 1 / -1;
+  }
+
+  .works1190-card--half.works1190-card--mint,
+  .works1190-card--half.works1190-card--pink {
+    background-color: transparent !important;
+    box-shadow: 0 4px 20px rgba(7, 14, 65, 0.08) !important;
+  }
+
+  .works1190-card__mobile-bg {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    aspect-ratio: var(--works1190-mobile-aspect) !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .works1190-card__media,
+  .works1190-card__tablet-visual,
+  .works1190-ai-tablet-bg,
+  .works1190-onboarding-tablet-bg {
+    display: none !important;
+  }
+
+  .works1190-card__tags {
+    position: absolute !important;
+    top: 20px !important;
+    left: 20px !important;
+    right: auto !important;
+    z-index: 1 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    max-width: calc(100% - 40px) !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .works1190-card__tag {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 24px !important;
+    padding: 8px !important;
+    border-radius: 100px !important;
+    background: #ffffff !important;
+    font-family: Archivo, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    color: #070e41 !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+  }
+
+  .works1190-card__tag-item--hide-mobile {
+    display: none !important;
+  }
+
+  .works1190-card__title {
+    position: absolute !important;
+    left: 20px !important;
+    bottom: 20px !important;
+    z-index: 1 !important;
+    margin: 0 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    max-width: calc(100% - 40px) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px;
+    color: #070e41 !important;
+  }
+
+  .works1190__cta {
+    height: 52px;
+    padding: 10px 12px 10px 16px;
+    font-size: 18px;
+    border-radius: 16px;
+  }
+
+  .works1190__cta-icon {
+    width: 26px;
+    height: 26px;
+  }
 }

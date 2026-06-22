@@ -149,7 +149,7 @@
   align-items: center;
   column-gap: clamp(16px, 3vw, 32px);
   min-height: 56px;
-  padding: 0 24px;
+  padding: 0 16px;
   background: #e6ebf4;
   border-bottom: 1px solid #e5e7eb;
   box-sizing: border-box;
@@ -185,9 +185,10 @@
 }
 
 .bis1191-toolbar__label {
+  width: 100%;
   font-family: Archivo, sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   color: #070e41;
   text-align: left;
 }
@@ -215,14 +216,14 @@
 }
 
 .bis1191-panel {
-  padding: 24px;
+  padding: 16px;
   box-sizing: border-box;
 }
 
 .bis1191-panel--design {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   border-right: 1px solid #e5e7eb;
 }
 
@@ -277,7 +278,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  gap: 16px;
+  gap: 32px;
   flex: 1 1 auto;
   min-height: 0;
 }

@@ -8,7 +8,7 @@ import card3 from '../assets/3.png'
 import card4 from '../assets/4.png'
 import './heroPortfolio.css'
 
-const STACK_MIN_HEIGHT = 168
+const STACK_MIN_HEIGHT = 100
 
 type CardDef = {
   id: string
@@ -79,7 +79,7 @@ const CARDS: CardDef[] = [
 export function FloatingCards561() {
   return (
     <div
-      className="relative mx-auto mb-10 w-full md:mb-[40px]"
+      className="hero561-float-wrap relative mx-auto mb-10 w-full md:mb-[40px]"
       style={{ height: STACK_MIN_HEIGHT }}
       aria-hidden
     >

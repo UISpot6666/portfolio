@@ -1,4 +1,8 @@
 import './servicesSection11912779.css'
+import productMobileBg from '../assets/services/service-product-design-mobile.png'
+import marketingMobileBg from '../assets/services/service-marketing-mobile.png'
+import websiteMobileBg from '../assets/services/service-website-mobile.png'
+import brandingMobileBg from '../assets/services/service-branding-mobile.png'
 
 const IMG_PRODUCT = '/figma-assets/services/service-product-design.png'
 const IMG_MARKETING = '/figma-assets/services/service-marketing.png'
@@ -23,7 +27,11 @@ export function ServicesSection({ id }: ServicesSectionProps) {
     >
       <div className="services1191__inner">
         <header className="services1191__intro">
-          <p className="services1191__eyebrow">Choose your service </p>
+          <p className="services1191__eyebrow">
+            Choose your
+            <br className="services1191__eyebrow-break" aria-hidden="true" />
+            service
+          </p>
           <h2 id="services1191-heading" className="services1191__headline">
             Discover{' '}
             <span className="services1191__headline-accent">(web)application</span>{' '}
@@ -44,6 +52,14 @@ export function ServicesSection({ id }: ServicesSectionProps) {
                 className="services1191-card__media"
                 src={IMG_PRODUCT}
                 alt=""
+                decoding="async"
+                loading="lazy"
+              />
+              <img
+                className="services1191-card__mobile-bg"
+                src={productMobileBg}
+                alt=""
+                aria-hidden="true"
                 decoding="async"
                 loading="lazy"
               />
@@ -80,6 +96,14 @@ export function ServicesSection({ id }: ServicesSectionProps) {
                 decoding="async"
                 loading="lazy"
               />
+              <img
+                className="services1191-card__mobile-bg"
+                src={marketingMobileBg}
+                alt=""
+                aria-hidden="true"
+                decoding="async"
+                loading="lazy"
+              />
               <div className="services1191-card__overlay-narrow">
                 <ul className="services1191-card__tags" aria-label="Focus areas">
                   <li>
@@ -111,6 +135,14 @@ export function ServicesSection({ id }: ServicesSectionProps) {
                 decoding="async"
                 loading="lazy"
               />
+              <img
+                className="services1191-card__mobile-bg"
+                src={websiteMobileBg}
+                alt=""
+                aria-hidden="true"
+                decoding="async"
+                loading="lazy"
+              />
               <div className="services1191-card__overlay-narrow">
                 <ul className="services1191-card__tags" aria-label="Focus areas">
                   <li>
@@ -137,6 +169,14 @@ export function ServicesSection({ id }: ServicesSectionProps) {
                 className="services1191-card__media"
                 src={IMG_BRANDING}
                 alt=""
+                decoding="async"
+                loading="lazy"
+              />
+              <img
+                className="services1191-card__mobile-bg"
+                src={brandingMobileBg}
+                alt=""
+                aria-hidden="true"
                 decoding="async"
                 loading="lazy"
               />

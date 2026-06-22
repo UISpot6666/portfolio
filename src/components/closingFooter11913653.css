@@ -111,9 +111,13 @@
   color: #070e41;
 }
 
+.cf1193653-contact__title-copy--tablet {
+  display: none;
+}
+
 .cf1193653-contact__subtitle {
   margin: 0;
-  width: 100px;
+  width: 500px;
   height: fit-content;
   min-width: 30px;
   font-family: Archivo, sans-serif;
@@ -436,16 +440,450 @@
   color: rgba(7, 14, 65, 0.4);
 }
 
-@media (max-width: 900px) {
+/* ── Tablet — Figma 1365:399 contact + 1365:1457 footer (640–1023px, 640px frame) ── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .cf1193653-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 680px;
+    min-height: 680px;
+    overflow: hidden;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .cf1193653-contact__deck {
+    overflow: hidden;
+  }
+
+  .cf1193653-deco--tl {
+    left: -72px;
+    top: -20px;
+    width: 248px;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .cf1193653-deco--tr {
+    right: -64px;
+    top: 8px;
+    width: 212px;
+    transform: rotate(11deg);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .cf1193653-deco--tall {
+    right: -96px;
+    top: 38%;
+    width: 276px;
+    opacity: 1;
+    z-index: 0;
+  }
+
+  .cf1193653-deco--bl {
+    left: -84px;
+    top: auto;
+    bottom: 28px;
+    width: 224px;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .cf1193653-contact__inner {
+    flex: 0 1 auto;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .cf1193653-contact__intro {
+    width: 100%;
+    max-width: 560px;
+    gap: 16px;
+  }
+
+  .cf1193653-contact__title {
+    min-width: 0;
+    max-width: 560px;
+    margin-inline: auto;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    line-height: 104%;
+    text-align: center;
+    color: #070e41;
+  }
+
+  .cf1193653-contact__title-copy--flow {
+    display: none;
+  }
+
+  .cf1193653-contact__title-copy--tablet {
+    display: block;
+  }
+
+  .cf1193653-contact__title-copy--tablet .cf1193653-contact__title-line {
+    display: block;
+  }
+
+  .cf1193653-contact__subtitle {
+    width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    text-align: center;
+    color: rgba(7, 14, 65, 0.7);
+    opacity: 1;
+  }
+
+  .cf1193653-contact__cta-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .cf1193653-primary,
+  .cf1193653-secondary {
+    width: auto;
+    min-height: 52px;
+    height: 52px;
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .cf1193653-footer {
+    overflow-x: hidden;
+  }
+
+  .cf1193653-footer__inner {
+    gap: 48px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 64px 40px;
+    box-sizing: border-box;
+  }
+
+  .cf1193653-footer__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'hero hero'
+      'pitch learn';
+    align-items: start;
+    column-gap: 24px;
+    row-gap: 32px;
+    width: 100%;
+  }
+
+  .cf1193653-footer__hero {
+    grid-area: hero;
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .cf1193653-footer__lead,
+  .cf1193653-footer__lead-alt {
+    width: 100%;
+    max-width: 100%;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.32px;
+    line-height: 104%;
+    color: #0a0a0a;
+  }
+
+  .cf1193653-footer__pitch {
+    grid-area: pitch;
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .cf1193653-footer__learn {
+    grid-area: learn;
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .cf1193653-footer__muted {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: rgba(7, 14, 65, 0.7);
+    opacity: 1;
+  }
+
+  .cf1193653-footer__mail {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #070e41;
+    overflow-wrap: anywhere;
+  }
+
+  .cf1193653-social {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cf1193653-footer__bottom {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .cf1193653-footer__meta {
+    font-size: 14px;
+    line-height: 140%;
+    color: #070e41;
+  }
+}
+
+/* ── Mobile — Figma 1365:400 (≤639px) ── */
+@media (max-width: 639px) {
+  .cf1193653-contact {
+    height: auto;
+    min-height: 740px;
+    overflow: hidden;
+    padding: 112px 16px 48px;
+    box-sizing: border-box;
+  }
+
+  .cf1193653-contact__deck {
+    overflow: hidden;
+  }
+
+  .cf1193653-deco--tl {
+    left: -52px;
+    top: 8px;
+    width: 168px;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .cf1193653-deco--tr {
+    right: -68px;
+    top: 16px;
+    width: 152px;
+    transform: rotate(10deg);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .cf1193653-deco--tall {
+    right: -92px;
+    top: 44%;
+    width: 192px;
+    opacity: 1;
+    z-index: 0;
+  }
+
+  .cf1193653-deco--bl {
+    left: -84px;
+    top: auto;
+    bottom: 24px;
+    width: 180px;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .cf1193653-contact__inner {
+    justify-content: flex-start;
+    gap: 24px;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .cf1193653-contact__intro {
+    gap: 12px;
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .cf1193653-contact__title {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.32px;
+    line-height: 104%;
+    text-align: center;
+  }
+
+  .cf1193653-contact__title-copy--flow {
+    display: block;
+  }
+
+  .cf1193653-contact__title-copy--tablet {
+    display: none;
+  }
+
+  .cf1193653-contact__title-line {
+    display: block;
+  }
+
+  .cf1193653-contact__subtitle {
+    width: 100%;
+    max-width: 288px;
+    margin-inline: auto;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0;
+    text-align: center;
+    color: rgba(7, 14, 65, 0.7);
+    opacity: 1;
+  }
+
+  .cf1193653-contact__cta-row {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+    max-width: 308px;
+  }
+
+  .cf1193653-primary,
+  .cf1193653-secondary {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cf1193653-primary__label {
+    white-space: nowrap;
+  }
+
+  /* Footer — Figma 1365:1360 (≤639px) */
+  .cf1193653-footer {
+    overflow-x: hidden;
+    padding-inline: 16px;
+    box-sizing: border-box;
+  }
+
+  .cf1193653-footer__inner {
+    align-items: flex-start;
+    gap: 48px;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding: 48px 0;
+    box-sizing: border-box;
+  }
+
+  .cf1193653-footer__top {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+  }
+
   .cf1193653-footer__hero,
   .cf1193653-footer__pitch,
   .cf1193653-footer__learn {
-    flex: 1 1 100%;
+    flex: none;
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .cf1193653-footer__hero {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .cf1193653-footer__lead,
+  .cf1193653-footer__lead-alt {
+    width: 100%;
+    max-width: 100%;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.32px;
+    line-height: 104%;
+    color: #0a0a0a;
+  }
+
+  .cf1193653-footer__pitch {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .cf1193653-footer__muted {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: rgba(7, 14, 65, 0.7);
+    opacity: 1;
+  }
+
+  .cf1193653-footer__mail {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #070e41;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .cf1193653-footer__learn {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .cf1193653-social {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .cf1193653-footer__bottom {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .cf1193653-footer__meta {
+    font-size: 14px;
+    line-height: 140%;
+    color: #070e41;
   }
 }

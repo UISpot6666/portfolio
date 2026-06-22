@@ -118,26 +118,6 @@
   }
 }
 
-@media (max-width: 640px) {
-  .reviews1191__stage {
-    height: auto;
-    min-height: 400px;
-  }
-
-  .reviews1191__track {
-    flex-direction: column;
-    align-items: center;
-    padding: 72px clamp(24px, 8vw, 48px);
-    height: auto;
-    scroll-snap-type: unset;
-    overflow: visible;
-  }
-
-  .reviews1191-card {
-    scroll-snap-align: unset !important;
-  }
-}
-
 .reviews1191-card {
   flex-shrink: 0;
   scroll-snap-align: center;
@@ -161,6 +141,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.reviews1191-card__image--mobile {
+  display: none;
 }
 
 /* Controls */
@@ -205,6 +189,10 @@
   transform: scaleX(-1);
 }
 
+.reviews1191-nav__icon--mobile {
+  display: none;
+}
+
 .reviews1191-dots {
   display: flex;
   align-items: center;
@@ -230,6 +218,10 @@
   transition: opacity 0.15s ease;
 }
 
+.reviews1191-num::before {
+  content: attr(data-index);
+}
+
 .reviews1191-num:hover {
   opacity: 0.65;
 }
@@ -241,4 +233,179 @@
 
 .reviews1191-num:not(.reviews1191-num--current) {
   font-weight: 400;
+}
+
+/* ── Mobile — Figma 1316:798 (≤640px) ── */
+@media (max-width: 640px) {
+  .reviews1191 {
+    padding: 69px 16px 64px;
+  }
+
+  .reviews1191__inner {
+    gap: 32px;
+    max-width: 308px;
+  }
+
+  .reviews1191__title {
+    font-size: 32px;
+    letter-spacing: -0.32px;
+    line-height: 104%;
+    max-width: none;
+    width: 100%;
+  }
+
+  .reviews1191__stage {
+    width: 100%;
+    max-width: 308px;
+    height: 460px;
+    min-height: 460px;
+    border-radius: 32px;
+  }
+
+  .reviews1191__edge {
+    display: block;
+    width: 56px;
+  }
+
+  .reviews1191__viewport {
+    overflow: hidden;
+  }
+
+  .reviews1191__track {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+    gap: 0;
+    scroll-snap-type: unset;
+  }
+
+  .reviews1191-card {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    scroll-snap-align: unset !important;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .reviews1191-card--active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+  }
+
+  .reviews1191-card[data-size='sm'],
+  .reviews1191-card[data-size='lg'] {
+    width: 100%;
+    height: 100%;
+  }
+
+  .reviews1191-card__image--desktop {
+    display: none;
+  }
+
+  .reviews1191-card__image--mobile {
+    display: block;
+    flex-shrink: 0;
+    width: 260px;
+    height: 284px;
+    max-width: 260px;
+    max-height: 284px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+    box-shadow: none;
+  }
+
+  .reviews1191-controls {
+    gap: 32px;
+  }
+
+  .reviews1191-nav {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 11px;
+    border-width: 1.67px;
+    border-color: rgba(7, 14, 65, 0.1);
+    background: #ffffff;
+  }
+
+  .reviews1191-nav .reviews1191-nav__svg {
+    display: none;
+  }
+
+  .reviews1191-nav__icon--mobile {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  .reviews1191-nav:disabled {
+    opacity: 0.35;
+  }
+
+  /* Figma 1351:324 — mobile dot pagination */
+  .reviews1191-dots {
+    gap: 8px;
+    height: 5px;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reviews1191-dots li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5px;
+  }
+
+  .reviews1191-num {
+    display: block;
+    flex-shrink: 0;
+    width: 2px;
+    height: 2px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    background: rgba(12, 66, 206, 0.2);
+    border-radius: 50%;
+    opacity: 1;
+    transition: background-color 0.15s ease;
+  }
+
+  .reviews1191-num::before {
+    content: none;
+  }
+
+  .reviews1191-num--current {
+    width: 5px;
+    height: 5px;
+    background: #0c42ce;
+    opacity: 1;
+    font-weight: 400;
+  }
+
+  .reviews1191-num:hover:not(.reviews1191-num--current) {
+    opacity: 1;
+    background: rgba(12, 66, 206, 0.35);
+  }
+
+  .reviews1191-num--current:hover {
+    background: #0c42ce;
+  }
 }

@@ -27,6 +27,7 @@ type ProcessPhase = {
   id: string
   tabLabel: string
   stepMark: string
+  stepMarkTablet: string
   headline: string
   body: [string, string]
 }
@@ -37,6 +38,7 @@ const PROCESS_PHASES = [
     id: '01',
     tabLabel: 'Consultation',
     stepMark: '[01]',
+    stepMarkTablet: '[01 Step]',
     headline: 'Free Consultation',
     body: [
       'I will delve into your industry, analyze your competitors and your target audience.',
@@ -47,6 +49,7 @@ const PROCESS_PHASES = [
     id: '02',
     tabLabel: 'Research',
     stepMark: '[02]',
+    stepMarkTablet: '[02 Step]',
     headline: 'Research & discovery',
     body: [
       'I frame the problem space with stakeholders, map constraints, and pull signal from analytics, support, and market context.',
@@ -57,6 +60,7 @@ const PROCESS_PHASES = [
     id: '03',
     tabLabel: 'UX phase',
     stepMark: '[03]',
+    stepMarkTablet: '[03 Step]',
     headline: 'UX architecture',
     body: [
       'I translate strategy into flows, wireframes, and interaction patterns that reduce friction and clarify next steps.',
@@ -67,6 +71,7 @@ const PROCESS_PHASES = [
     id: '04',
     tabLabel: 'Visual',
     stepMark: '[04]',
+    stepMarkTablet: '[04 Step]',
     headline: 'Visual design',
     body: [
       'I build a cohesive UI system—type, color, components, and motion—that matches your brand and scales with the product.',
@@ -77,6 +82,7 @@ const PROCESS_PHASES = [
     id: '05',
     tabLabel: 'Final phase',
     stepMark: '[05]',
+    stepMarkTablet: '[05 Step]',
     headline: 'Handoff & launch support',
     body: [
       'I tighten QA alongside your team: responsive checks, interaction polish, and content edge cases resolved before release.',
@@ -151,7 +157,10 @@ function ProcessesHeroMockup({
 
   if (variant === 'visual-showcase') {
     return (
-      <div className="proc3081__mockup proc3081__mockup--consultation" aria-hidden>
+      <div
+        className="proc3081__mockup proc3081__mockup--consultation proc3081__mockup--phase-visual"
+        aria-hidden
+      >
         <ProcessesVisualShowcase />
       </div>
     )
@@ -159,7 +168,10 @@ function ProcessesHeroMockup({
 
   if (variant === 'launch-showcase') {
     return (
-      <div className="proc3081__mockup proc3081__mockup--consultation" aria-hidden>
+      <div
+        className="proc3081__mockup proc3081__mockup--consultation proc3081__mockup--phase-launch"
+        aria-hidden
+      >
         <ProcessesLaunchShowcase />
       </div>
     )
@@ -291,7 +303,10 @@ export function ProcessesSection({ id }: ProcessesSectionProps) {
             aria-labelledby={`proc-tab-${phase.id}`}
           >
             <div className="proc3081__left-stack">
-              <span className="proc3081__step-id">{phase.stepMark}</span>
+              <span className="proc3081__step-id">
+                <span className="proc3081__step-id-short">{phase.stepMark}</span>
+                <span className="proc3081__step-id-long">{phase.stepMarkTablet}</span>
+              </span>
               <h2 id={headingId} className="proc3081__headline">
                 {phase.headline}
               </h2>

@@ -8,16 +8,25 @@ import { useCallback, useRef, useState } from 'react'
 import review01 from '../assets/review 01.png'
 import review02 from '../assets/review 02.png'
 import review03 from '../assets/review 03.png'
+import reviewMobile01 from '../assets/reviews/review-mobile-01.png'
+import reviewMobile02 from '../assets/reviews/review-mobile-02.png'
+import reviewMobile03 from '../assets/reviews/review-mobile-03.png'
 import './reviewsSection11912615.css'
 
 const BG_IMG = '/figma-assets/reviews/reviews-bg.png'
+const MOBILE_NAV_PREV = '/figma-assets/reviews/reviews-mobile-nav-prev.svg'
+const MOBILE_NAV_NEXT = '/figma-assets/reviews/reviews-mobile-nav-next.svg'
 
 type ReviewSlide = {
   id: string
   src: string
+  /** Swap this path to change the mobile card artwork (≤639px). */
+  mobileSrc: string
   alt: string
   width: number
   height: number
+  mobileWidth: number
+  mobileHeight: number
 }
 
 /** Figma order: review 02 → review 01 → review 03 */
@@ -25,23 +34,32 @@ const SLIDES: ReviewSlide[] = [
   {
     id: '1',
     src: review02,
+    mobileSrc: reviewMobile01,
     alt: 'Client feedback on sales pitch deck and marketing materials',
     width: 432,
     height: 264,
+    mobileWidth: 260,
+    mobileHeight: 284,
   },
   {
     id: '2',
     src: review01,
+    mobileSrc: reviewMobile02,
     alt: 'Client feedback on web application MVP',
     width: 672,
     height: 264,
+    mobileWidth: 260,
+    mobileHeight: 284,
   },
   {
     id: '3',
     src: review03,
+    mobileSrc: reviewMobile03,
     alt: 'Client feedback on mobile fintech application',
     width: 672,
     height: 264,
+    mobileWidth: 260,
+    mobileHeight: 284,
   },
 ]
 
@@ -80,6 +98,7 @@ export function ReviewsSection({ id }: ReviewsSectionProps) {
   const [active, setActive] = useState(0)
 
   const scrollSlideIntoView = useCallback((index: number) => {
+    if (window.matchMedia('(max-width: 640px)').matches) return
     const el = slidesRef.current[index]
     el?.scrollIntoView({
       inline: 'center',
@@ -143,15 +162,30 @@ export function ReviewsSection({ id }: ReviewsSectionProps) {
                     slidesRef.current[index] = el
                   }}
                   aria-label={`Slide ${index + 1} of ${SLIDES.length}`}
-                  className="reviews1191-card"
+                  aria-hidden={index !== active}
+                  className={
+                    index === active
+                      ? 'reviews1191-card reviews1191-card--active'
+                      : 'reviews1191-card'
+                  }
                   data-size={slide.width === 432 ? 'sm' : 'lg'}
                 >
                   <img
-                    className="reviews1191-card__image"
+                    className="reviews1191-card__image reviews1191-card__image--desktop"
                     src={slide.src}
                     alt={slide.alt}
                     width={slide.width}
                     height={slide.height}
+                    decoding="async"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                  <img
+                    className="reviews1191-card__image reviews1191-card__image--mobile"
+                    src={slide.mobileSrc}
+                    alt={slide.alt}
+                    width={slide.mobileWidth}
+                    height={slide.mobileHeight}
                     decoding="async"
                     loading="lazy"
                     draggable={false}
@@ -170,10 +204,16 @@ export function ReviewsSection({ id }: ReviewsSectionProps) {
             aria-label="Previous testimonial"
             disabled={active === 0}
           >
+            <img
+              className="reviews1191-nav__icon reviews1191-nav__icon--mobile"
+              src={MOBILE_NAV_PREV}
+              alt=""
+              aria-hidden
+            />
             <ArrowIcon direction="prev" />
           </button>
 
-          <ol className="reviews1191-dots">
+          <ol className="reviews1191-dots" aria-label="Testimonial slides">
             {SLIDES.map((s, index) => (
               <li key={s.id}>
                 <button
@@ -183,12 +223,11 @@ export function ReviewsSection({ id }: ReviewsSectionProps) {
                       ? 'reviews1191-num reviews1191-num--current'
                       : 'reviews1191-num'
                   }
+                  data-index={String(index + 1).padStart(2, '0')}
                   aria-label={`Slide ${index + 1}`}
                   aria-current={active === index ? true : undefined}
                   onClick={() => jumpTo(index)}
-                >
-                  {String(index + 1).padStart(2, '0')}
-                </button>
+                />
               </li>
             ))}
           </ol>
@@ -200,6 +239,12 @@ export function ReviewsSection({ id }: ReviewsSectionProps) {
             aria-label="Next testimonial"
             disabled={active === SLIDES.length - 1}
           >
+            <img
+              className="reviews1191-nav__icon reviews1191-nav__icon--mobile"
+              src={MOBILE_NAV_NEXT}
+              alt=""
+              aria-hidden
+            />
             <ArrowIcon direction="next" />
           </button>
         </div>

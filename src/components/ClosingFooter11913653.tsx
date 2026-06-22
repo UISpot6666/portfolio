@@ -133,7 +133,23 @@ export function ClosingFooter11913653({
         <div className="cf1193653-contact__inner">
           <div className="cf1193653-contact__intro">
             <h2 id="cf1193653-heading" className="cf1193653-contact__title">
-              Take your opportunity to build something great
+              <span className="cf1193653-contact__title-copy cf1193653-contact__title-copy--flow">
+                <span className="cf1193653-contact__title-line">Take your</span>{' '}
+                <span className="cf1193653-contact__title-line">
+                  opportunity to build
+                </span>{' '}
+                <span className="cf1193653-contact__title-line">
+                  something great
+                </span>
+              </span>
+              <span className="cf1193653-contact__title-copy cf1193653-contact__title-copy--tablet">
+                <span className="cf1193653-contact__title-line">
+                  Take your opportunity to
+                </span>
+                <span className="cf1193653-contact__title-line">
+                  build something great
+                </span>
+              </span>
             </h2>
             <p className="cf1193653-contact__subtitle">
               You don&apos;t need all the answers before getting started. Reach
