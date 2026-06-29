@@ -1,6 +1,6 @@
 /* Works section — Figma 1190:2407 (“3rd section”) */
 
-/* Mobile card frame — matches Onboarding improvement, B2C_mobile.png (696×776) */
+/* Mobile card frame — matches Onboarding improvement, B2C_mobile.png (616×696) */
 :root {
   --works1190-mobile-aspect: 616 / 696;
 }
@@ -58,6 +58,19 @@
   overflow: hidden;
   border-radius: 32px;
   box-sizing: border-box;
+}
+
+a.works1190-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.works1190-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(7, 14, 65, 0.12);
 }
 
 .works1190-card--featured {

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { CSSProperties } from 'react'
 import './worksSection11902407.css'
 import hrMobileBg from '../assets/HR Solution, B2B SaaS_mobile.png'
@@ -60,13 +61,15 @@ export function WorksSection({ id }: WorksSectionProps) {
             Works
           </h2>
           <p className="works1190__subtitle">
-            Sana Learn brings the best of an LMS, LXP, authoring tool, and
-            virtual classroom into one AI-native learning platform.
+            Selected work across product, web, and digital design.
           </p>
         </header>
 
         <div className="works1190__grid">
-          <article className="works1190-card works1190-card--featured">
+          <Link
+            to="/works/hr-solution"
+            className="works1190-card works1190-card--featured"
+          >
             <img
               className="works1190-card__mobile-bg"
               src={hrMobileBg}
@@ -102,9 +105,10 @@ export function WorksSection({ id }: WorksSectionProps) {
             <h3 className="works1190-card__title">
               HR Solution, B2B SaaS
             </h3>
-          </article>
+          </Link>
 
-          <article
+          <Link
+            to="/works/ai-marketing"
             className="works1190-card works1190-card--half works1190-card--mint"
             style={
               {
@@ -160,9 +164,10 @@ export function WorksSection({ id }: WorksSectionProps) {
             <h3 className="works1190-card__title">
               AI Marketing Tool, B2C/B2B
             </h3>
-          </article>
+          </Link>
 
-          <article
+          <Link
+            to="/works/onboarding"
             className="works1190-card works1190-card--half works1190-card--pink"
             style={
               {
@@ -211,7 +216,7 @@ export function WorksSection({ id }: WorksSectionProps) {
             <h3 className="works1190-card__title">
               Onboarding improvement, B2C
             </h3>
-          </article>
+          </Link>
 
           <div className="works1190__cta-shell">
             <a className="works1190__cta" href="#works">

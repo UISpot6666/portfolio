@@ -64,6 +64,11 @@ function NavbarMenuCloseIcon() {
   )
 }
 
+export type HeroPortfolioNavbarProps = {
+  /** Prefix for in-page anchor links (e.g. "/" on case study pages). */
+  anchorPrefix?: string
+}
+
 /**
  * Main nav strip 1174:593 — “Let’s Talk” matches CTA frame 1174:602 —
  * backdrop blur 120px, horizontal padding 84px, height 72px, Archivo 28 / 14.
@@ -71,7 +76,7 @@ function NavbarMenuCloseIcon() {
  * Auto-hides on scroll down, reappears on scroll up, and switches palette
  * based on the section currently behind the header (`data-header-theme`).
  */
-export function HeroPortfolioNavbar() {
+export function HeroPortfolioNavbar({ anchorPrefix = '' }: HeroPortfolioNavbarProps) {
   const { isVisible, theme: headerTheme } = usePortfolioHeaderState()
   const [menuOpen, setMenuOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
@@ -151,7 +156,7 @@ export function HeroPortfolioNavbar() {
         {LINKS.map(({ label, href }) => (
           <a
             key={label}
-            href={href}
+            href={`${anchorPrefix}${href}`}
             className="hero-portfolio-navbar__link whitespace-nowrap font-['Archivo',sans-serif] text-[13px] font-semibold leading-[132%] no-underline transition-opacity hover:opacity-90 md:text-sm"
           >
             {label}
@@ -160,7 +165,7 @@ export function HeroPortfolioNavbar() {
       </nav>
 
       <FigmaNavbarLetsTalk1174602
-        href="#contact"
+        href={`${anchorPrefix}#contact`}
         theme={headerTheme}
         className="hero-portfolio-navbar__desktop-cta"
       />
@@ -192,7 +197,7 @@ export function HeroPortfolioNavbar() {
           {MOBILE_NAV_ITEMS.map(({ label, href, icon }) => (
             <li key={label} className="hero-portfolio-navbar__panel-item">
               <a
-                href={href}
+                href={`${anchorPrefix}${href}`}
                 className="hero-portfolio-navbar__panel-link"
                 onClick={closeMenu}
               >
